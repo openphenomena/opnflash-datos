@@ -29,6 +29,14 @@ def latino(t):
     """Una traducción al español tiene que estar casi toda en alfabeto latino."""
     l = [c for c in t if c.isalpha()]
     return bool(l) and sum('a' <= c.lower() <= 'z' or c in 'áéíóúñüàèìòùç' for c in l) / len(l) >= 0.85
+def terminos(orig, trad):
+    """Términos que el traductor libre pierde: si el original dice «superinteligente» o «superinteligencia» y la traducción no, se repone."""
+    if trad and re.search(r'super[\s-]?intell?ig', orig, re.I) and not re.search(r'super[\s-]?intelig', trad, re.I):
+        for rx, por in ((r'\b(i)nteligencia artificial\b', None), (r'\bIA\b', 'IA superinteligente'), (r'\b(i)nteligencia\b', None)):
+            n = re.sub(rx, (lambda m: ('S' if m.group(1) == 'I' else 's') + 'uper' + m.group(0).lower()) if por is None else por, trad, count=1, flags=0 if por else re.I)
+            if n != trad: return n
+    return trad
+
 def frase(t):
     return ' '.join(x if (i == 0 or x.isupper() or any(c.isdigit() for c in x)) else x.lower() for i, x in enumerate(t.split()))
 
@@ -48,7 +56,7 @@ def main():
     for a in d['titulares']:
         idi = M[a['m']]['i']
         if idi == 'es': continue
-        if a['t'] in cache: a['e'] = cache[a['t']]
+        if a['t'] in cache: a['e'] = cache[a['t']] = terminos(a['t'], cache[a['t']])
         elif idi in IDIOMAS: pend.setdefault(idi, []).append(a)
     hechos = 0
     try:
@@ -123,7 +131,7 @@ def main():
                 for a, t in zip(tanda, T):
                     t = ' '.join(html.unescape(html.unescape(t or '')).split())
                     if t and not latino(t): t = ''   # salió en otro alfabeto o con basura: no se da por traducido
-                    if t and not igual(t, a['t']): a['e'] = cache[a['t']] = t[:260]; hechos += 1
+                    if t and not igual(t, a['t']): a['e'] = cache[a['t']] = terminos(a['t'], t[:260]); hechos += 1
                     else: cache[a['t']] = ''          # no se pudo: no se reintenta en cada ejecución
     except Exception as e:
         print('AVISO traducir', type(e).__name__, str(e)[:120])
