@@ -7,7 +7,7 @@ Así el sitio abre siempre la señal vigente y, si una no está en directo, pasa
 Guarda public/datos/directos.json. No descarga ni copia vídeo: solo el identificador del directo.
 Uso:  python3 directos.py [carpeta public]
 """
-import json, os, re, sys, datetime as dt, urllib.request
+import json, os, re, sys, datetime as dt, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -26,9 +26,21 @@ def mirar(cid):
     except Exception as e:
         print('AVISO directo', cid, type(e).__name__)
         return 'error', False
-    m = re.search(r'"videoDetails":\{"videoId":"([\w-]{11})"', p)
+    m = re.search(r'"videoDetails":\{"videoId":"([\w-]{11})"', p) or re.search(r'<link rel="canonical" href="https://www\.youtube\.com/watch\?v=([\w-]{11})"', p)
     vivo = '"isLive":true' in p or '"isLiveNow":true' in p
-    return (m.group(1) if m and vivo else None), '"playableInEmbed":true' in p
+    v = m.group(1) if m and vivo else None
+    return v, (insertable(v) if v else False)
+
+def insertable(v):
+    """YouTube responde 401 en oEmbed cuando el dueño no deja insertar el vídeo en otras webs.
+    La página del canal no siempre trae ese dato desde las máquinas de GitHub, así que se pregunta aparte."""
+    try:
+        with urllib.request.urlopen(urllib.request.Request('https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=' + v, headers=H), timeout=15) as r:
+            return r.status == 200
+    except urllib.error.HTTPError as e:
+        return False if e.code in (401, 403) else None
+    except Exception:
+        return None
 
 def main():
     ruta = os.path.join(PUB, 'datos', 'directos.json')
@@ -44,7 +56,7 @@ def main():
         if v == 'error':  # la página no respondió: se conserva lo último que se sabía
             a = antes.get(c['id'], {})
             v, ins = a.get('v'), a.get('ins', False)
-        out.append({**c, 'v': v, 'ins': bool(v and ins)})
+        out.append({**c, 'v': v, 'ins': (None if (v and ins is None) else bool(v and ins))})
     print('canales', len(out), 'en directo', sum(1 for c in out if c['v']), 'insertables', sum(1 for c in out if c['ins']))
     # La fecha solo cambia si cambia alguna señal: así el archivo no se sube en cada ejecución.
     if ant.get('canales') == out:
