@@ -79,6 +79,9 @@ def main():
     if _c.get('v', 1) < 3:   # versión 3 (22/11): titulares en inglés de medios anotados en otro idioma salían rotos; se rehacen una vez
         for a in d['titulares']:
             if M[a['m']]['i'] not in ('en', 'es') and en_ingles(a['t']): cache.pop(a['t'], None)
+    if _c.get('v', 1) < 4:   # versión 4 (22/11): Tuoi Tre News y Thai PBS pasaron a «en»; lo que se tradujo como vietnamita o tailandés se rehace
+        for a in d['titulares']:
+            if M[a['m']]['n'] in ('Tuoi Tre News', 'Thai PBS'): cache.pop(a['t'], None); cache_n.pop(a['t'], None)
     pend = {}; pend_n = {}
     for a in d['titulares']:
         idi = M[a['m']]['i']
@@ -211,7 +214,7 @@ def main():
         if not a.get('e'): a.pop('e', None)
         if not a.get('n'): a.pop('n', None)
     json.dump(d, open(ruta, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-    json.dump({'nota': 'Traducciones automáticas ya hechas (Argos Translate), para no repetirlas.', 'v': 3, 't': cache, 'n': cache_n}, open(rc, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    json.dump({'nota': 'Traducciones automáticas ya hechas (Argos Translate), para no repetirlas.', 'v': 4, 't': cache, 'n': cache_n}, open(rc, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     falta = sum(1 for a in d['titulares'] if M[a['m']]['i'] != 'es' and 'e' not in a)
     falta_n = sum(1 for a in d['titulares'] if M[a['m']]['i'] != 'en' and 'n' not in a)
     print('traducidos ahora', hechos, '· en inglés', sum(1 for a in d['titulares'] if 'n' in a), '· pendientes al inglés', falta_n, '· con traducción', sum(1 for a in d['titulares'] if 'e' in a), '· pendientes', falta, '· seg', round(time.time() - T0))
