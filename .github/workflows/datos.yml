@@ -90,6 +90,7 @@ jobs:
               nuevo = json.load(open(sys.argv[1], encoding='utf-8'))
               remoto = json.loads(__import__('subprocess').check_output(['git', 'show', 'origin/main:datos/traducciones.json']))
               t = dict(remoto.get('t', {})); t.update(nuevo.get('t', {})); nuevo['t'] = t
+              n = dict(remoto.get('n', {})); n.update(nuevo.get('n', {})); nuevo['n'] = n
               json.dump(nuevo, open('datos/traducciones.json', 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
           except Exception as e:
               print('AVISO: no se pudieron sumar las traducciones:', e)
