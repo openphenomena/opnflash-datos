@@ -199,7 +199,7 @@ def main():
     try: antes = json.load(open(os.path.join(PUB, 'datos', 'portada.json'), encoding='utf-8'))
     except Exception: antes = {}
     for k, fn in [('terremotos', terremotos), ('alertas', alertas), ('eventos', eventos), ('clima_espacial', clima_espacial),
-                  ('ciclones', ciclones), ('iss', iss), ('tiangong', tiangong), ('ciencia', ciencia), ('noticias', noticias), ('noticias_es', noticias_es)]:
+                  ('ciclones', ciclones), ('iss', iss), ('tiangong', tiangong)]:
         r = fn()
         # Si una fuente de noticias falla en esta pasada (GDELT responde a menudo «429 Too Many Requests» a GitHub), se conserva lo de la anterior
         if k in ('ciencia', 'noticias', 'noticias_es') and r and not r.get('datos') and (antes.get(k) or {}).get('datos'):
@@ -207,6 +207,8 @@ def main():
             if k == 'noticias_es': r['datos'] = [x for x in r['datos'] if x.get('medio') in ('SINC', 'Global Voices')]
         portada[k] = r
         print(k, 'sin datos' if not r else (len(r['datos']) if isinstance(r['datos'], list) else 'ok'))
+    # arXiv, GDELT, SINC y Global Voices: retiradas por el usuario el 22/11 (6:47 p. m.); se dejan vacías para que el sitio no falle
+    for k in ('ciencia', 'noticias', 'noticias_es'): portada[k] = {'datos': []}
     json.dump(portada, open(os.path.join(PUB, 'datos', 'portada.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 
 if __name__ == '__main__':
