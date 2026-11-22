@@ -40,6 +40,10 @@ def terminos(orig, trad):
             if n != trad: return n
     return trad
 
+def limpiar_en(t):
+    """Palabras que el traductor libre pone mal en inglés y resultan ofensivas («perrita» → «bitch»): se cambian por la neutra."""
+    return re.sub(r'\b([Bb])itch(es)?\b', lambda m: ('D' if m.group(1) == 'B' else 'd') + 'og' + ('s' if m.group(2) else ''), t)
+
 def frase(t):
     return ' '.join(x if (i == 0 or x.isupper() or any(c.isdigit() for c in x)) else x.lower() for i, x in enumerate(t.split()))
 
@@ -59,7 +63,7 @@ def main():
     for a in d['titulares']:
         idi = M[a['m']]['i']
         if idi != 'en':
-            if a['t'] in cache_n: a['n'] = cache_n[a['t']]
+            if a['t'] in cache_n: a['n'] = cache_n[a['t']] = limpiar_en(cache_n[a['t']])
             elif (idi in IDIOMAS or idi == 'es') and not parece_ingles(a['t']): pend_n.setdefault(idi, []).append(a)   # medio mal anotado que ya escribe en inglés: se deja tal cual
         if idi == 'es': continue
         if a['t'] in cache: a['e'] = cache[a['t']] = terminos(a['t'], cache[a['t']])
@@ -130,7 +134,7 @@ def main():
                         if par[1] == 'en':   # paso intermedio al inglés: sirve también para la versión en inglés del sitio
                             for a, u in zip(tanda, U):
                                 u = ' '.join(html.unescape(html.unescape(u or '')).split())
-                                if u and latino(u) and not igual(u, a['t']) and 'n' not in a: a['n'] = cache_n[a['t']] = u[:260]
+                                if u and latino(u) and not igual(u, a['t']) and 'n' not in a: a['n'] = cache_n[a['t']] = limpiar_en(u[:260])
                         if par == ('en', 'es'):
                             mal = [i for i, (x, y) in enumerate(zip(T, U)) if igual(x, y) or parece_ingles(y)]
                             if mal:
@@ -160,7 +164,7 @@ def main():
                 except Exception as e: print('AVISO traducir tanda', par, type(e).__name__, str(e)[:80]); break
                 for a, u in zip(tanda, U):
                     u = ' '.join(html.unescape(html.unescape(u or '')).split())
-                    if u and latino(u) and not igual(u, a['t']): a['n'] = cache_n[a['t']] = u[:260]; hechos_n += 1
+                    if u and latino(u) and not igual(u, a['t']): a['n'] = cache_n[a['t']] = limpiar_en(u[:260]); hechos_n += 1
                     else: cache_n[a['t']] = ''
         print('al inglés ahora', hechos_n, '· seg', round(time.time() - T1))
     except Exception as e:
