@@ -47,6 +47,11 @@ jobs:
           set -o pipefail
           pip install -q ctranslate2 sentencepiece subword-nmt sacremoses 2>&1 | tail -1
           python3 herramientas/traducir.py . 240 200 2>&1 | tee traducir.log
+      - name: Partir titulares por idioma (titulares-es.json y titulares-en.json)
+        id: partir
+        if: always()
+        continue-on-error: true
+        run: python3 herramientas/partir.py .
       - name: Capas del modo Experto (capas.json)
         id: capas
         continue-on-error: true
