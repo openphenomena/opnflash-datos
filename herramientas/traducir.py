@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Traducción gratuita de titulares al español para opnflash.com (aprobada por el usuario el 22/11/2026: «que no cueste nada»).
 
-Usa Argos Translate, un traductor libre que funciona en la propia máquina del robot, sin enviar los titulares a ningún servicio.
+Usa los modelos libres de Argos Translate (con CTranslate2 y SentencePiece) en la propia máquina del robot, sin enviar los titulares a ningún servicio.
 Añade a cada titular que no está en español el campo «e» (su traducción) en public/datos/titulares.json.
 Guarda lo ya traducido en public/datos/traducciones.json para no repetirlo: en cada ejecución solo se traduce lo nuevo.
 El inglés va directo al español; los demás idiomas pasan por el inglés. Tiene un tope de tiempo: lo que no entra se traduce en la siguiente ejecución.
@@ -31,15 +31,40 @@ def main():
         elif idi in IDIOMAS: pend.setdefault(idi, []).append(a)
     hechos = 0
     try:
-        import argostranslate.package as ap, argostranslate.translate as at
-        inst = {(p.from_code, p.to_code) for p in ap.get_installed_packages()}
+        # Motor ligero: los mismos modelos libres de Argos Translate, usados directamente con CTranslate2 y SentencePiece.
+        # Así no hace falta instalar el paquete completo (que arrastra dependencias de varios gigas y alargaba cada ejecución).
+        import ctranslate2, sentencepiece, urllib.request, zipfile, io, glob
+        BASE = os.path.expanduser('~/.local/share/argos-translate/packages'); os.makedirs(BASE, exist_ok=True)
+        def instalados():
+            out = {}
+            for m in glob.glob(os.path.join(BASE, '*', 'metadata.json')):
+                try:
+                    md = json.load(open(m, encoding='utf-8')); c = os.path.dirname(m)
+                    if os.path.exists(os.path.join(c, 'sentencepiece.model')) and os.path.isdir(os.path.join(c, 'model')): out[(md['from_code'], md['to_code'])] = c
+                except Exception: pass
+            return out
+        inst = instalados(); idx = []; motores = {}
         def asegurar(par, cupo):
             if par in inst: return True
             if cupo[0] <= 0: return False
-            if not getattr(asegurar, 'idx', None): ap.update_package_index(); asegurar.idx = ap.get_available_packages()
-            p = next((p for p in asegurar.idx if (p.from_code, p.to_code) == par), None)
-            if not p: return False
-            ap.install_from_path(p.download()); inst.add(par); cupo[0] -= 1; print('modelo instalado', par); return True
+            if not idx:
+                with urllib.request.urlopen('https://raw.githubusercontent.com/argosopentech/argospm-index/main/index.json', timeout=30) as r: idx.extend(json.load(r))
+            p = next((p for p in idx if (p.get('from_code'), p.get('to_code')) == par), None)
+            url = p and next((u for u in p.get('links', []) if u.startswith('https://')), None)
+            if not url: return False
+            cupo[0] -= 1
+            req = urllib.request.Request(url, headers={'User-Agent': 'opnflash.com (+https://www.opnflash.com/acerca.html)'})
+            with urllib.request.urlopen(req, timeout=120) as r: zipfile.ZipFile(io.BytesIO(r.read())).extractall(BASE)
+            inst.clear(); inst.update(instalados()); print('modelo instalado', par, par in inst); return par in inst
+        def motor(par):
+            if par not in motores:
+                c = inst[par]; sp = sentencepiece.SentencePieceProcessor(); sp.load(os.path.join(c, 'sentencepiece.model'))
+                motores[par] = (ctranslate2.Translator(os.path.join(c, 'model'), device='cpu', inter_threads=1, intra_threads=2), sp)
+            return motores[par]
+        def pasar(textos, par):
+            tr, sp = motor(par)
+            res = tr.translate_batch([sp.encode(t, out_type=str) for t in textos], beam_size=2, max_batch_size=32, max_decoding_length=160, replace_unknowns=True)
+            return [''.join(r.hypotheses[0]).replace('\u2581', ' ').strip() for r in res]
         cupo = [MAX_MODELOS_NUEVOS]
         for idi in sorted(pend, key=lambda k: (IDIOMAS.index(k) > 0, -len(pend[k]))):
             if time.time() - T0 > TOPE: break
@@ -47,15 +72,18 @@ def main():
             try:
                 if not all(asegurar(p, cupo) for p in pares): continue
             except Exception as e: print('AVISO traducir modelo', idi, type(e).__name__); continue
-            for a in sorted(pend[idi], key=lambda x: x['f'], reverse=True):
+            L = sorted(pend[idi], key=lambda x: x['f'], reverse=True)
+            for k in range(0, len(L), 64):
                 if time.time() - T0 > TOPE: break
+                tanda = L[k:k + 64]
                 try:
-                    t = a['t']
-                    for de, a_ in pares: t = at.translate(t, de, a_)
+                    T = [a['t'] for a in tanda]
+                    for par in pares: T = pasar(T, par)
+                except Exception as e: print('AVISO traducir tanda', idi, type(e).__name__, str(e)[:80]); break
+                for a, t in zip(tanda, T):
                     t = ' '.join((t or '').split())
                     if t and not igual(t, a['t']): a['e'] = cache[a['t']] = t[:260]; hechos += 1
                     else: cache[a['t']] = ''          # no se pudo: no se reintenta en cada ejecución
-                except Exception: continue
     except Exception as e:
         print('AVISO traducir', type(e).__name__, str(e)[:120])
     vivos = {a['t'] for a in d['titulares']}
