@@ -1,0 +1,82 @@
+# Actualiza los datos de opnflash.com cada hora (minuto 17) y al pedirlo a mano.
+# Los datos se publican con GitHub Pages desde este repositorio público (https://openphenomena.github.io/opnflash-datos/datos/),
+# así que actualizar datos ya no gasta publicaciones de Cloudflare Pages en el sitio.
+name: Actualizar datos
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: datos
+  cancel-in-progress: false
+jobs:
+  datos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install sgp4
+      - name: Datos del mapa (portada.json)
+        id: datos
+        shell: bash
+        run: set -o pipefail; python3 herramientas/datos.py . 2>&1 | tee datos.log
+        continue-on-error: true
+      - name: Titulares de medios (titulares.json)
+        id: medios
+        shell: bash
+        run: set -o pipefail; python3 herramientas/medios.py . 150 2>&1 | tee medios.log
+        continue-on-error: true
+      - name: Modelos del traductor libre (se guardan entre ejecuciones)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/argos-translate
+            ~/.local/cache/argos-translate
+          key: argos-v1-${{ github.run_id }}
+          restore-keys: argos-v1-
+      - name: Traducción de titulares al español (traductor libre, sin coste)
+        id: traducir
+        continue-on-error: true
+        timeout-minutes: 9
+        run: |
+          set -o pipefail
+          pip install -q argostranslate 2>&1 | tail -1
+          python3 herramientas/traducir.py . 240 2>&1 | tee traducir.log
+      - name: Capas del modo Experto (capas.json)
+        id: capas
+        continue-on-error: true
+        run: set -o pipefail; python3 herramientas/capas.py . 2>&1 | tee capas.log
+      - name: Señales de vídeo en directo (directos.json)
+        id: directos
+        shell: bash
+        run: set -o pipefail; python3 herramientas/directos.py . 2>&1 | tee directos.log
+        continue-on-error: true
+      # Aviso claro en vez de reintentos: cada ejecución deja un resumen con las fuentes que fallaron.
+      # No marca la ejecución como fallida por una fuente caída, para no mandar correos de error cada hora.
+      - name: Resumen de avisos
+        if: always()
+        run: |
+          {
+            echo "## Datos de opnflash.com"
+            echo "- portada.json: ${{ steps.datos.outcome }} · titulares.json: ${{ steps.medios.outcome }} · directos.json: ${{ steps.directos.outcome }} · capas.json: ${{ steps.capas.outcome }} · traducción: ${{ steps.traducir.outcome }}"
+            grep -h "traducidos ahora" traducir.log 2>/dev/null | sed 's/^/- /'
+            n=$(grep -h "^AVISO" datos.log medios.log directos.log capas.log traducir.log 2>/dev/null | wc -l)
+            echo "- Fuentes con aviso: $n"
+            grep -h "^AVISO" datos.log directos.log capas.log 2>/dev/null | head -30 | sed 's/^/    /'
+            grep -h "sin directo\|no insertable" directos.log 2>/dev/null | head -12 | sed 's/^/    /'
+          } >> "$GITHUB_STEP_SUMMARY"
+          rm -f datos.log medios.log directos.log capas.log traducir.log
+      - name: Guardar si hay cambios
+        run: |
+          git config user.name "opnflash-datos"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Datos: actualización automática $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
+          git push origin HEAD:main
