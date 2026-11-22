@@ -44,6 +44,8 @@ def buscar(texto, a3=None, paises=None):
       4. si sigue la duda, ese nombre no se usa: es mejor no ubicar que ubicar mal.
     """
     if not texto: return None
+    # Escrituras de la India y del sudeste asiático: al separar palabras se cortan en los signos vocálicos y los trozos coinciden con nombres de ciudades (titular nepalí sobre Irán ubicado en Coro). En esos alfabetos no se buscan lugares.
+    texto = re.sub(r"[\u0900-\u0DFF\u0E00-\u0FFF\u1000-\u109F\u1780-\u17FF]+", ' ', texto)
     texto = re.sub(r"\b(Texas Instruments|New York Times|Wall Street Journal|Washington Post|New York Post|Los Angeles Times|Boston Globe|Miami Herald|Real Madrid|Atlético de Madrid|Bayern Munich|Paris Saint-Germain|Inter Miami|Manchester (United|City)|Santiago Bernabéu)\b", ' ', texto)
     texto = re.sub(r"\bEE\.?\s?UU\.?|\bU\.S\.(A\.)?|\bUSA\b|\bUS\b(?!\$)", ' Estados Unidos ', texto)
     texto = re.sub(r"\bU\.K\.|\bUK\b", ' Reino Unido ', texto)
