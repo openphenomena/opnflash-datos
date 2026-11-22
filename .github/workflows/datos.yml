@@ -45,7 +45,7 @@ jobs:
         timeout-minutes: 9
         run: |
           set -o pipefail
-          pip install -q ctranslate2 sentencepiece 2>&1 | tail -1
+          pip install -q ctranslate2 sentencepiece subword-nmt sacremoses 2>&1 | tail -1
           python3 herramientas/traducir.py . 240 2>&1 | tee traducir.log
       - name: Capas del modo Experto (capas.json)
         id: capas

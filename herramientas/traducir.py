@@ -18,11 +18,25 @@ MAX_MODELOS_NUEVOS = 4   # por ejecución, para no alargarla: cada modelo pesa u
 
 def igual(a, b): n = lambda t: re.sub(r'[\W_]+', ' ', t.lower()).strip(); return n(a) == n(b)
 
+# El modelo inglés→español a veces devuelve el texto en inglés sin traducir, sobre todo con titulares en «Title Case».
+# Si pasa, se reintenta con el titular en minúsculas (salvo siglas y la primera letra); si sigue igual, no se da por traducido.
+EN = set('a an the of and to in is for with on after over from by says new its as at be are was will has have this that who what how why'.split())
+ES = set('de la el en y los las del que por con para un una se su al es lo como más tras sobre'.split())
+def parece_ingles(t):
+    w = re.findall(r"[a-záéíóúñü']+", t.lower())
+    return sum(x in EN for x in w) + sum(len(x) > 5 and x.endswith('ing') for x in w) >= 2 and not any(x in ES for x in w)
+def frase(t):
+    return ' '.join(x if (i == 0 or x.isupper() or any(c.isdigit() for c in x)) else x.lower() for i, x in enumerate(t.split()))
+
 def main():
     ruta = os.path.join(PUB, 'datos', 'titulares.json'); rc = os.path.join(PUB, 'datos', 'traducciones.json')
     d = json.load(open(ruta, encoding='utf-8')); M = d['medios']
     try: cache = json.load(open(rc, encoding='utf-8')).get('t', {})
     except Exception: cache = {}
+    # Traducciones guardadas que se quedaron en inglés: se vuelven a hacer con la corrección de abajo.
+    malas = [k for k, v in cache.items() if v and parece_ingles(v)]
+    for k in malas: del cache[k]
+    if malas: print('traducciones en inglés que se rehacen', len(malas))
     pend = {}
     for a in d['titulares']:
         idi = M[a['m']]['i']
@@ -40,7 +54,8 @@ def main():
             for m in glob.glob(os.path.join(BASE, '*', 'metadata.json')):
                 try:
                     md = json.load(open(m, encoding='utf-8')); c = os.path.dirname(m)
-                    if os.path.exists(os.path.join(c, 'sentencepiece.model')) and os.path.isdir(os.path.join(c, 'model')): out[(md['from_code'], md['to_code'])] = c
+                    # Dos formatos de modelo: SentencePiece (los antiguos) y BPE con Moses (los de la versión 1.9, la mayoría).
+                    if os.path.isdir(os.path.join(c, 'model')) and any(os.path.exists(os.path.join(c, f)) for f in ('sentencepiece.model', 'bpe.model')): out[(md['from_code'], md['to_code'])] = c
                 except Exception: pass
             return out
         inst = instalados(); idx = []; motores = {}
@@ -58,13 +73,22 @@ def main():
             inst.clear(); inst.update(instalados()); print('modelo instalado', par, par in inst); return par in inst
         def motor(par):
             if par not in motores:
-                c = inst[par]; sp = sentencepiece.SentencePieceProcessor(); sp.load(os.path.join(c, 'sentencepiece.model'))
-                motores[par] = (ctranslate2.Translator(os.path.join(c, 'model'), device='cpu', inter_threads=1, intra_threads=2), sp)
+                c = inst[par]; tr = ctranslate2.Translator(os.path.join(c, 'model'), device='cpu', inter_threads=1, intra_threads=2)
+                if os.path.exists(os.path.join(c, 'sentencepiece.model')):
+                    sp = sentencepiece.SentencePieceProcessor(); sp.load(os.path.join(c, 'sentencepiece.model'))
+                    motores[par] = (tr, lambda t: sp.encode(t, out_type=str), lambda h: ''.join(h).replace('\u2581', ' ').strip())
+                else:
+                    import codecs
+                    from subword_nmt.apply_bpe import BPE
+                    from sacremoses import MosesTokenizer, MosesDetokenizer
+                    bpe = BPE(codecs.open(os.path.join(c, 'bpe.model'), encoding='utf-8')); mt = MosesTokenizer(lang=par[0]); md = MosesDetokenizer(lang=par[1])
+                    motores[par] = (tr, lambda t: bpe.process_line(mt.tokenize(t, return_str=True, escape=False)).split(),
+                                    lambda h: md.detokenize(' '.join(h).replace('@@ ', '').split()))
             return motores[par]
         def pasar(textos, par):
-            tr, sp = motor(par)
-            res = tr.translate_batch([sp.encode(t, out_type=str) for t in textos], beam_size=2, max_batch_size=32, max_decoding_length=160, replace_unknowns=True)
-            return [''.join(r.hypotheses[0]).replace('\u2581', ' ').strip() for r in res]
+            tr, cod, dec = motor(par)
+            res = tr.translate_batch([cod(t) for t in textos], beam_size=2, max_batch_size=32, max_decoding_length=160, replace_unknowns=True)
+            return [dec(r.hypotheses[0]) for r in res]
         cupo = [MAX_MODELOS_NUEVOS]
         for idi in sorted(pend, key=lambda k: (IDIOMAS.index(k) > 0, -len(pend[k]))):
             if time.time() - T0 > TOPE: break
@@ -78,7 +102,14 @@ def main():
                 tanda = L[k:k + 64]
                 try:
                     T = [a['t'] for a in tanda]
-                    for par in pares: T = pasar(T, par)
+                    for par in pares:
+                        U = pasar(T, par)
+                        if par == ('en', 'es'):
+                            mal = [i for i, (x, y) in enumerate(zip(T, U)) if igual(x, y) or parece_ingles(y)]
+                            if mal:
+                                R = pasar([frase(T[i]) for i in mal], par)
+                                for i, r in zip(mal, R): U[i] = '' if (igual(T[i], r) or parece_ingles(r)) else r
+                        T = U
                 except Exception as e: print('AVISO traducir tanda', idi, type(e).__name__, str(e)[:80]); break
                 for a, t in zip(tanda, T):
                     t = ' '.join((t or '').split())
