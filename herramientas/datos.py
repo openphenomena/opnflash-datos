@@ -130,8 +130,9 @@ def iss():
 
 def ciencia():
     out = []
-    for cat, nombre in [('cs.AI', 'Inteligencia artificial'), ('astro-ph', 'Astronomía')]:
-        b = get(f'https://export.arxiv.org/api/query?search_query=cat:{cat}&sortBy=submittedDate&sortOrder=descending&max_results=6', raw=True)
+    # «astro-ph» a secas solo encuentra artículos antiguos (desde 2009 se usan subcategorías): se piden todas.
+    for cat, nombre in [('cat:cs.AI', 'Inteligencia artificial'), ('+OR+'.join('cat:astro-ph.' + s for s in ('CO', 'EP', 'GA', 'HE', 'IM', 'SR')), 'Astronomía')]:
+        b = get(f'https://export.arxiv.org/api/query?search_query={cat}&sortBy=submittedDate&sortOrder=descending&max_results=6', raw=True)
         if not b: continue
         ns = {'a': 'http://www.w3.org/2005/Atom'}
         for en in ET.fromstring(b).findall('a:entry', ns):
@@ -197,9 +198,15 @@ def noticias_es():
 def main():
     os.makedirs(os.path.join(PUB, 'datos'), exist_ok=True)
     portada = {'generado': ahora()}
+    try: antes = json.load(open(os.path.join(PUB, 'datos', 'portada.json'), encoding='utf-8'))
+    except Exception: antes = {}
     for k, fn in [('terremotos', terremotos), ('alertas', alertas), ('eventos', eventos), ('clima_espacial', clima_espacial),
                   ('ciclones', ciclones), ('iss', iss), ('tiangong', tiangong), ('ciencia', ciencia), ('noticias', noticias), ('noticias_es', noticias_es)]:
-        r = fn(); portada[k] = r
+        r = fn()
+        # Si una fuente de noticias falla en esta pasada (GDELT responde a menudo «429 Too Many Requests» a GitHub), se conserva lo de la anterior
+        if k in ('ciencia', 'noticias', 'noticias_es') and r and not r.get('datos') and (antes.get(k) or {}).get('datos'):
+            r = antes[k]; print('AVISO', k, 'sin datos en esta pasada: se conserva la anterior')
+        portada[k] = r
         print(k, 'sin datos' if not r else (len(r['datos']) if isinstance(r['datos'], list) else 'ok'))
     json.dump(portada, open(os.path.join(PUB, 'datos', 'portada.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 

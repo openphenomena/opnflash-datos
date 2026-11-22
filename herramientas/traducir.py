@@ -68,7 +68,7 @@ def main():
         if idi == 'es': continue
         if a['t'] in cache: a['e'] = cache[a['t']] = terminos(a['t'], cache[a['t']])
         elif idi in IDIOMAS: pend.setdefault(idi, []).append(a)
-    hechos = 0
+    hechos = 0; vivos_ax = set()
     try:
         # Motor ligero: los mismos modelos libres de Argos Translate, usados directamente con CTranslate2 y SentencePiece.
         # Así no hace falta instalar el paquete completo (que arrastra dependencias de varios gigas y alargaba cada ejecución).
@@ -147,6 +147,21 @@ def main():
                     if t and not latino(t): t = ''   # salió en otro alfabeto o con basura: no se da por traducido
                     if t and not igual(t, a['t']): a['e'] = cache[a['t']] = terminos(a['t'], t[:260]); hechos += 1
                     else: cache[a['t']] = ''          # no se pudo: no se reintenta en cada ejecución
+        # Títulos de arXiv (en inglés) al español, campo «e» en portada.json
+        try:
+            rp = os.path.join(PUB, 'datos', 'portada.json'); por = json.load(open(rp, encoding='utf-8'))
+            AX = (por.get('ciencia') or {}).get('datos') or []
+            for x in AX:
+                if x.get('titulo') in cache and cache[x['titulo']]: x['e'] = cache[x['titulo']]
+            falta = [x for x in AX if x.get('titulo') and 'e' not in x]
+            if falta and asegurar(('en', 'es'), cupo):
+                U = pasar([x['titulo'] for x in falta], ('en', 'es'))
+                for x, u in zip(falta, U):
+                    u = ' '.join(html.unescape(html.unescape(u or '')).split())
+                    if u and latino(u) and not igual(u, x['titulo']) and not parece_ingles(u): x['e'] = cache[x['titulo']] = u[:260]
+            vivos_ax.update(x['titulo'] for x in AX if x.get('titulo'))
+            json.dump(por, open(rp, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+        except Exception as e: print('AVISO traducir arXiv', type(e).__name__, str(e)[:80])
         # Segunda vuelta: al inglés, lo que no salió del paso intermedio (español y los idiomas con modelo directo al español).
         T1 = time.time(); hechos_n = 0; cupo_n = [2]
         for idi in sorted(pend_n, key=lambda k: -len(pend_n[k])):
@@ -169,7 +184,7 @@ def main():
         print('al inglés ahora', hechos_n, '· seg', round(time.time() - T1))
     except Exception as e:
         print('AVISO traducir', type(e).__name__, str(e)[:120])
-    vivos = {a['t'] for a in d['titulares']}
+    vivos = {a['t'] for a in d['titulares']} | vivos_ax
     cache = {k: v for k, v in cache.items() if k in vivos}; cache_n = {k: v for k, v in cache_n.items() if k in vivos}
     for a in d['titulares']:
         if not a.get('e'): a.pop('e', None)
