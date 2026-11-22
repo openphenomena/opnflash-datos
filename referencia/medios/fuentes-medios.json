@@ -1,7 +1,7 @@
 {
- "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala de control: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026). El 22/11/2026 (12:07) el usuario aprobó 71 fuentes más de América del Sur (18 por búsqueda de Google Noticias limitada a la web del medio, porque no tienen feed propio), con dos principales por país para el modo Simple, y quitó Vatican News English y Catholic Radio Network por ser medios religiosos (compromiso de derechos humanos del sitio).",
- "total_feeds": 1495,
- "total_medios": 1466,
+ "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala de control: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026). El 22/11/2026 (12:07) el usuario aprobó 71 fuentes más de América del Sur (18 por búsqueda de Google Noticias limitada a la web del medio, porque no tienen feed propio), con dos principales por país para el modo Simple, y quitó Vatican News English y Catholic Radio Network por ser medios religiosos (compromiso de derechos humanos del sitio). El 22/11/2026 (15:55) el usuario aprobó 17 feeds de fuentes exclusivas de conflictos armados (campo «conflicto»): solo sus titulares llevan la etiqueta «Conflicto» y entran en ese tema de la Sala de control.",
+ "total_feeds": 1512,
+ "total_medios": 1483,
  "feeds": [
   {
    "medio": "BBC",
@@ -18194,6 +18194,261 @@
    "tema": [
     "latam"
    ]
+  },
+  {
+   "medio": "ACLED",
+   "feed": "ACLED",
+   "url": "https://news.google.com/rss/search?q=site%3Aacleddata.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Infodefensa",
+   "feed": "Infodefensa",
+   "url": "https://news.google.com/rss/search?q=site%3Ainfodefensa.com%20when%3A2d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Airwars",
+   "feed": "Airwars",
+   "url": "https://airwars.org/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "The New Humanitarian",
+   "feed": "The New Humanitarian",
+   "url": "https://www.thenewhumanitarian.org/rss/all.xml",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Insecurity Insight",
+   "feed": "Insecurity Insight",
+   "url": "https://insecurityinsight.org/feed",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Euromaidan Press",
+   "feed": "Euromaidan Press",
+   "url": "https://euromaidanpress.com/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Defense Express",
+   "feed": "Defense Express",
+   "url": "https://en.defence-ua.com/rss/feed.xml",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Revista Ejércitos",
+   "feed": "Revista Ejércitos",
+   "url": "https://www.revistaejercitos.com/feed/",
+   "idioma": "es",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "El Radar",
+   "feed": "El Radar",
+   "url": "https://www.elradar.es/feed/",
+   "idioma": "es",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Defence Blog",
+   "feed": "Defence Blog",
+   "url": "https://defence-blog.com/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "UK Defence Journal",
+   "feed": "UK Defence Journal",
+   "url": "https://ukdefencejournal.org.uk/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Army Recognition",
+   "feed": "Army Recognition",
+   "url": "https://www.armyrecognition.com/news/army-news?format=feed&type=rss",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Air & Space Forces Magazine",
+   "feed": "Air & Space Forces Magazine",
+   "url": "https://www.airandspaceforces.com/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Army Technology",
+   "feed": "Army Technology",
+   "url": "https://www.army-technology.com/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "Military Africa",
+   "feed": "Military Africa",
+   "url": "https://www.military.africa/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "defenceWeb",
+   "feed": "defenceWeb",
+   "url": "https://www.defenceweb.co.za/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
+  },
+  {
+   "medio": "ADF Magazine",
+   "feed": "ADF Magazine",
+   "url": "https://adf-magazine.com/feed/",
+   "idioma": "en",
+   "region": [
+    "General"
+   ],
+   "tema": [
+    "sala"
+   ],
+   "max": 8,
+   "sala": "c",
+   "conflicto": true
   }
  ]
 }
