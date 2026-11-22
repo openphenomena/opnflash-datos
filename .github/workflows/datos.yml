@@ -47,6 +47,11 @@ jobs:
           set -o pipefail
           pip install -q ctranslate2 sentencepiece subword-nmt sacremoses 2>&1 | tail -1
           python3 herramientas/traducir.py . 240 200 2>&1 | tee traducir.log
+      - name: Algoritmos de organización (repetidos, misma noticia, temas en aumento, traducciones dudosas)
+        id: algoritmos
+        if: always()
+        continue-on-error: true
+        run: set -o pipefail; python3 herramientas/algoritmos.py . 2>&1 | tee algoritmos.log
       - name: Partir titulares por idioma (titulares-es.json y titulares-en.json)
         id: partir
         if: always()
@@ -70,12 +75,13 @@ jobs:
             echo "## Datos de opnflash.com"
             echo "- portada.json: ${{ steps.datos.outcome }} · titulares.json: ${{ steps.medios.outcome }} · directos.json: ${{ steps.directos.outcome }} · capas.json: ${{ steps.capas.outcome }} · traducción: ${{ steps.traducir.outcome }}"
             grep -h "traducidos ahora" traducir.log 2>/dev/null | sed 's/^/- /'
+            grep -h "repetidos quitados\|temas en aumento" algoritmos.log 2>/dev/null | sed 's/^/- /'
             n=$(grep -h "^AVISO" datos.log medios.log directos.log capas.log traducir.log 2>/dev/null | wc -l)
             echo "- Fuentes con aviso: $n"
             grep -h "^AVISO" datos.log directos.log capas.log 2>/dev/null | head -30 | sed 's/^/    /'
             grep -h "sin directo\|no insertable" directos.log 2>/dev/null | head -12 | sed 's/^/    /'
           } >> "$GITHUB_STEP_SUMMARY"
-          rm -f datos.log medios.log directos.log capas.log traducir.log
+          rm -f datos.log medios.log directos.log capas.log traducir.log algoritmos.log
       # Si mientras tanto otra ejecución (programada o lanzada a mano) ya subió datos, no se hace rebase
       # (los JSON chocan siempre): se parte de lo último de main, se ponen encima los datos recién
       # generados y se suman las traducciones de los dos lados. Hasta 5 intentos.
