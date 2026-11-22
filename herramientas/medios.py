@@ -107,6 +107,7 @@ def main():
         L.sort(reverse=True); n = 0
         for d, t, u, rs in L:
             k = t.lower()
+            if not re.match(r'(?i)^https?://', u or ''): continue   # solo enlaces web normales (nunca javascript: ni data:)
             if k in vistos or u in vistos: continue
             vistos.add(k); vistos.add(u)
             a = {'m': m, 't': t, 'u': u, 'f': d.strftime('%Y-%m-%dT%H:%M:%SZ')}
