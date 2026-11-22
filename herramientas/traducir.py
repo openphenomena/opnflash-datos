@@ -7,7 +7,7 @@ Guarda lo ya traducido en public/datos/traducciones.json para no repetirlo: en c
 El inglés va directo al español; los demás idiomas pasan por el inglés. Tiene un tope de tiempo: lo que no entra se traduce en la siguiente ejecución.
 Uso:  python3 traducir.py [carpeta public] [segundos máximos]
 """
-import json, os, re, sys, time
+import json, os, re, sys, time, html
 
 PUB = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'public')
 TOPE = float(sys.argv[2]) if len(sys.argv) > 2 else 240
@@ -25,16 +25,23 @@ ES = set('de la el en y los las del que por con para un una se su al es lo como 
 def parece_ingles(t):
     w = re.findall(r"[a-záéíóúñü']+", t.lower())
     return sum(x in EN for x in w) + sum(len(x) > 5 and x.endswith('ing') for x in w) >= 2 and not any(x in ES for x in w)
+def latino(t):
+    """Una traducción al español tiene que estar casi toda en alfabeto latino."""
+    l = [c for c in t if c.isalpha()]
+    return bool(l) and sum('a' <= c.lower() <= 'z' or c in 'áéíóúñüàèìòùç' for c in l) / len(l) >= 0.85
 def frase(t):
     return ' '.join(x if (i == 0 or x.isupper() or any(c.isdigit() for c in x)) else x.lower() for i, x in enumerate(t.split()))
 
 def main():
     ruta = os.path.join(PUB, 'datos', 'titulares.json'); rc = os.path.join(PUB, 'datos', 'traducciones.json')
     d = json.load(open(ruta, encoding='utf-8')); M = d['medios']
-    try: cache = json.load(open(rc, encoding='utf-8')).get('t', {})
-    except Exception: cache = {}
+    try: _c = json.load(open(rc, encoding='utf-8'))
+    except Exception: _c = {}
+    cache = _c.get('t', {})
+    if _c.get('v', 1) < 2:   # versión 2 (22/11): los titulares con «&» se traducían mal; se rehacen una vez
+        cache = {k: v for k, v in cache.items() if '&' not in k}
     # Traducciones guardadas que se quedaron en inglés: se vuelven a hacer con la corrección de abajo.
-    malas = [k for k, v in cache.items() if v and parece_ingles(v)]
+    malas = [k for k, v in cache.items() if v and (parece_ingles(v) or not latino(v) or re.search(r'&(amp|quot|gt|lt|#\d+);', v))]
     for k in malas: del cache[k]
     if malas: print('traducciones en inglés que se rehacen', len(malas))
     pend = {}
@@ -87,6 +94,8 @@ def main():
             return motores[par]
         def pasar(textos, par):
             tr, cod, dec = motor(par)
+            # «&» confunde a los modelos (devuelven &quot; o >): se cambia por la conjunción antes de traducir
+            textos = [re.sub(r'\s*&\s*', ' and ' if par[0] == 'en' else ' ', t) for t in textos]
             res = tr.translate_batch([cod(t) for t in textos], beam_size=2, max_batch_size=32, max_decoding_length=160, replace_unknowns=True)
             return [dec(r.hypotheses[0]) for r in res]
         cupo = [MAX_MODELOS_NUEVOS]
@@ -112,7 +121,8 @@ def main():
                         T = U
                 except Exception as e: print('AVISO traducir tanda', idi, type(e).__name__, str(e)[:80]); break
                 for a, t in zip(tanda, T):
-                    t = ' '.join((t or '').split())
+                    t = ' '.join(html.unescape(html.unescape(t or '')).split())
+                    if t and not latino(t): t = ''   # salió en otro alfabeto o con basura: no se da por traducido
                     if t and not igual(t, a['t']): a['e'] = cache[a['t']] = t[:260]; hechos += 1
                     else: cache[a['t']] = ''          # no se pudo: no se reintenta en cada ejecución
     except Exception as e:
@@ -122,7 +132,7 @@ def main():
     for a in d['titulares']:
         if not a.get('e'): a.pop('e', None)
     json.dump(d, open(ruta, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-    json.dump({'nota': 'Traducciones automáticas ya hechas (Argos Translate), para no repetirlas.', 't': cache}, open(rc, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    json.dump({'nota': 'Traducciones automáticas ya hechas (Argos Translate), para no repetirlas.', 'v': 2, 't': cache}, open(rc, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     falta = sum(1 for a in d['titulares'] if M[a['m']]['i'] != 'es' and 'e' not in a)
     print('traducidos ahora', hechos, '· con traducción', sum(1 for a in d['titulares'] if 'e' in a), '· pendientes', falta, '· seg', round(time.time() - T0))
 
