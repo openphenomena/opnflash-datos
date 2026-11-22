@@ -1,7 +1,7 @@
 {
- "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala de control: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026). El 22/11/2026 (12:07) el usuario aprobó 71 fuentes más de América del Sur (18 por búsqueda de Google Noticias limitada a la web del medio, porque no tienen feed propio), con dos principales por país para el modo Simple, y quitó Vatican News English y Catholic Radio Network por ser medios religiosos (compromiso de derechos humanos del sitio). El 22/11/2026 (15:55) el usuario aprobó 17 feeds de fuentes exclusivas de conflictos armados (campo «conflicto»): solo sus titulares llevan la etiqueta «Conflicto» y entran en ese tema de la Sala de control.",
- "total_feeds": 1512,
- "total_medios": 1483,
+ "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala de control: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026). El 22/11/2026 (12:07) el usuario aprobó 71 fuentes más de América del Sur (18 por búsqueda de Google Noticias limitada a la web del medio, porque no tienen feed propio), con dos principales por país para el modo Simple, y quitó Vatican News English y Catholic Radio Network por ser medios religiosos (compromiso de derechos humanos del sitio). El 22/11/2026 (15:55) el usuario aprobó 17 feeds de fuentes exclusivas de conflictos armados (campo «conflicto»): solo sus titulares llevan la etiqueta «Conflicto» y entran en ese tema de la Sala de control. El 22/11/2026 (8:09 p. m.) el usuario aprobó 37 medios venezolanos más (prensa regional, economía, investigación, radio y televisión, medios cercanos al Gobierno, organizaciones con informes y deportes); 27 se leen por búsqueda de Google Noticias limitada a su web porque su feed no responde o no se actualiza.",
+ "total_feeds": 1549,
+ "total_medios": 1520,
  "feeds": [
   {
    "medio": "BBC",
@@ -18449,6 +18449,450 @@
    "max": 8,
    "sala": "c",
    "conflicto": true
+  },
+  {
+   "medio": "El Universal",
+   "feed": "El Universal",
+   "url": "https://news.google.com/rss/search?q=site%3Aeluniversal.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "La Patilla",
+   "feed": "La Patilla",
+   "url": "https://www.lapatilla.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Panorama",
+   "feed": "Panorama",
+   "url": "https://news.google.com/rss/search?q=site%3Apanorama.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "El Siglo",
+   "feed": "El Siglo",
+   "url": "https://news.google.com/rss/search?q=site%3Aelsiglo.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "El Impulso",
+   "feed": "El Impulso",
+   "url": "https://www.elimpulso.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Diario de Los Andes",
+   "feed": "Diario de Los Andes",
+   "url": "https://news.google.com/rss/search?q=site%3Adiariodelosandes.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Diario de Guayana",
+   "feed": "Diario de Guayana",
+   "url": "https://news.google.com/rss/search?q=site%3Adiariodeguayana.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "El Periodiquito",
+   "feed": "El Periodiquito",
+   "url": "https://news.google.com/rss/search?q=site%3Aelperiodiquito.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Versión Final",
+   "feed": "Versión Final",
+   "url": "https://news.google.com/rss/search?q=site%3Aversionfinal.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Qué Pasa",
+   "feed": "Qué Pasa",
+   "url": "https://news.google.com/rss/search?q=site%3Aquepasa.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "El Sol de Margarita",
+   "feed": "El Sol de Margarita",
+   "url": "https://news.google.com/rss/search?q=site%3Aelsoldemargarita.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Diario La Región",
+   "feed": "Diario La Región",
+   "url": "https://diariolaregion.net/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Sumarium",
+   "feed": "Sumarium",
+   "url": "https://news.google.com/rss/search?q=site%3Asumarium.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Reporte Ya",
+   "feed": "Reporte Ya",
+   "url": "https://news.google.com/rss/search?q=site%3Areporteya.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "La Voce d'Italia",
+   "feed": "La Voce d'Italia",
+   "url": "https://voce.com.ve/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Banca y Negocios",
+   "feed": "Banca y Negocios",
+   "url": "https://news.google.com/rss/search?q=site%3Abancaynegocios.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "economia"
+   ]
+  },
+  {
+   "medio": "El Mundo Economía y Negocios",
+   "feed": "El Mundo Economía y Negocios",
+   "url": "https://news.google.com/rss/search?q=site%3Aelmundo.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "economia"
+   ]
+  },
+  {
+   "medio": "Petroguía",
+   "feed": "Petroguía",
+   "url": "https://news.google.com/rss/search?q=site%3Apetroguia.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "energia"
+   ]
+  },
+  {
+   "medio": "Analítica",
+   "feed": "Analítica",
+   "url": "https://news.google.com/rss/search?q=site%3Aanalitica.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Prodavinci",
+   "feed": "Prodavinci",
+   "url": "https://news.google.com/rss/search?q=site%3Aprodavinci.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Kapé Kapé",
+   "feed": "Kapé Kapé",
+   "url": "https://news.google.com/rss/search?q=site%3Akapekape.org%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Supuesto Negado",
+   "feed": "Supuesto Negado",
+   "url": "https://news.google.com/rss/search?q=site%3Asupuestonegado.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Venevisión",
+   "feed": "Venevisión",
+   "url": "https://news.google.com/rss/search?q=site%3Avenevision.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Unión Radio",
+   "feed": "Unión Radio",
+   "url": "https://news.google.com/rss/search?q=site%3Aunionradio.net%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Radio Caracas Radio",
+   "feed": "Radio Caracas Radio",
+   "url": "https://news.google.com/rss/search?q=site%3Arcr750.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "EVTV",
+   "feed": "EVTV",
+   "url": "https://news.google.com/rss/search?q=site%3Aevtvmiami.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Correo del Orinoco",
+   "feed": "Correo del Orinoco",
+   "url": "https://news.google.com/rss/search?q=site%3Acorreodelorinoco.gob.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Ciudad CCS",
+   "feed": "Ciudad CCS",
+   "url": "https://news.google.com/rss/search?q=site%3Aciudadccs.info%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Aporrea",
+   "feed": "Aporrea",
+   "url": "https://news.google.com/rss/search?q=site%3Aaporrea.org%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Misión Verdad",
+   "feed": "Misión Verdad",
+   "url": "https://misionverdad.com/rss.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "La IguanaTV",
+   "feed": "La IguanaTV",
+   "url": "https://www.laiguana.tv/rss/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Provea",
+   "feed": "Provea",
+   "url": "https://news.google.com/rss/search?q=site%3Aprovea.org%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Observatorio Venezolano de Conflictividad Social",
+   "feed": "Observatorio Venezolano de Conflictividad Social",
+   "url": "https://www.observatoriodeconflictos.org.ve/feed",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Observatorio Venezolano de Violencia",
+   "feed": "Observatorio Venezolano de Violencia",
+   "url": "https://news.google.com/rss/search?q=site%3Aobservatoriodeviolencia.org.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Transparencia Venezuela",
+   "feed": "Transparencia Venezuela",
+   "url": "https://transparenciave.org/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "venezuela"
+   ]
+  },
+  {
+   "medio": "Meridiano",
+   "feed": "Meridiano",
+   "url": "https://meridiano.net/feed",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "deportes"
+   ]
+  },
+  {
+   "medio": "Líder en Deportes",
+   "feed": "Líder en Deportes",
+   "url": "https://liderendeportes.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "deportes"
+   ]
   }
  ]
 }
