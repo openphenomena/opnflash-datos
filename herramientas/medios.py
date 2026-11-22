@@ -85,6 +85,7 @@ def main():
         mm = medios[idx[f['medio']]]
         if f.get('principal'): mm['pr'] = 1                         # sale también en modo Simple
         if f.get('sala'): mm['k'] = f['sala']                      # tema en la Sala de control
+        if f.get('conflicto'): mm['cf'] = 1                         # fuente exclusiva de conflictos armados: etiqueta «Conflicto»
         if f.get('max'): mm['_max'] = max(mm.get('_max', 0), f['max'])   # titulares por captura (por defecto, POR_MEDIO)
     res, err = {}, {}
     with ThreadPoolExecutor(96) as ex:
