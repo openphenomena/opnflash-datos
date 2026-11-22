@@ -3,14 +3,17 @@
 
 Usa los modelos libres de Argos Translate (con CTranslate2 y SentencePiece) en la propia máquina del robot, sin enviar los titulares a ningún servicio.
 Añade a cada titular que no está en español el campo «e» (su traducción) en public/datos/titulares.json.
+Versión en inglés del sitio (usuario, 22/11): añade también el campo «n» (traducción al inglés) a cada titular que no está en inglés;
+en los idiomas que pasan por el inglés se aprovecha ese paso intermedio, y el español se traduce con el modelo español→inglés.
 Guarda lo ya traducido en public/datos/traducciones.json para no repetirlo: en cada ejecución solo se traduce lo nuevo.
 El inglés va directo al español; los demás idiomas pasan por el inglés. Tiene un tope de tiempo: lo que no entra se traduce en la siguiente ejecución.
-Uso:  python3 traducir.py [carpeta public] [segundos máximos]
+Uso:  python3 traducir.py [carpeta public] [segundos máximos para el español] [segundos máximos para el inglés]
 """
 import json, os, re, sys, time, html
 
 PUB = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'public')
 TOPE = float(sys.argv[2]) if len(sys.argv) > 2 else 240
+TOPE_EN = float(sys.argv[3]) if len(sys.argv) > 3 else 180
 T0 = time.time()
 # Idiomas por orden de cuántos titulares traen. Solo se instalan los modelos de los que haya titulares pendientes.
 IDIOMAS = ['en', 'fr', 'pt', 'de', 'ar', 'ru', 'el', 'nl', 'pl', 'hu', 'it', 'ro', 'sv', 'tr', 'uk', 'zh', 'ja', 'ko', 'fa', 'he', 'hi', 'id', 'cs', 'sk', 'sl', 'sq', 'lt', 'th', 'vi']
@@ -45,16 +48,19 @@ def main():
     d = json.load(open(ruta, encoding='utf-8')); M = d['medios']
     try: _c = json.load(open(rc, encoding='utf-8'))
     except Exception: _c = {}
-    cache = _c.get('t', {})
+    cache = _c.get('t', {}); cache_n = _c.get('n', {})
     if _c.get('v', 1) < 2:   # versión 2 (22/11): los titulares con «&» se traducían mal; se rehacen una vez
         cache = {k: v for k, v in cache.items() if '&' not in k}
     # Traducciones guardadas que se quedaron en inglés: se vuelven a hacer con la corrección de abajo.
     malas = [k for k, v in cache.items() if v and (parece_ingles(v) or not latino(v) or re.search(r'&(amp|quot|gt|lt|#\d+);', v))]
     for k in malas: del cache[k]
     if malas: print('traducciones en inglés que se rehacen', len(malas))
-    pend = {}
+    pend = {}; pend_n = {}
     for a in d['titulares']:
         idi = M[a['m']]['i']
+        if idi != 'en':
+            if a['t'] in cache_n: a['n'] = cache_n[a['t']]
+            elif (idi in IDIOMAS or idi == 'es') and not parece_ingles(a['t']): pend_n.setdefault(idi, []).append(a)   # medio mal anotado que ya escribe en inglés: se deja tal cual
         if idi == 'es': continue
         if a['t'] in cache: a['e'] = cache[a['t']] = terminos(a['t'], cache[a['t']])
         elif idi in IDIOMAS: pend.setdefault(idi, []).append(a)
@@ -121,6 +127,10 @@ def main():
                     T = [a['t'] for a in tanda]
                     for par in pares:
                         U = pasar(T, par)
+                        if par[1] == 'en':   # paso intermedio al inglés: sirve también para la versión en inglés del sitio
+                            for a, u in zip(tanda, U):
+                                u = ' '.join(html.unescape(html.unescape(u or '')).split())
+                                if u and latino(u) and not igual(u, a['t']) and 'n' not in a: a['n'] = cache_n[a['t']] = u[:260]
                         if par == ('en', 'es'):
                             mal = [i for i, (x, y) in enumerate(zip(T, U)) if igual(x, y) or parece_ingles(y)]
                             if mal:
@@ -133,16 +143,38 @@ def main():
                     if t and not latino(t): t = ''   # salió en otro alfabeto o con basura: no se da por traducido
                     if t and not igual(t, a['t']): a['e'] = cache[a['t']] = terminos(a['t'], t[:260]); hechos += 1
                     else: cache[a['t']] = ''          # no se pudo: no se reintenta en cada ejecución
+        # Segunda vuelta: al inglés, lo que no salió del paso intermedio (español y los idiomas con modelo directo al español).
+        T1 = time.time(); hechos_n = 0; cupo_n = [2]
+        for idi in sorted(pend_n, key=lambda k: -len(pend_n[k])):
+            if time.time() - T1 > TOPE_EN: break
+            L = sorted([a for a in pend_n[idi] if 'n' not in a and a['t'] not in cache_n], key=lambda x: x['f'], reverse=True)
+            if not L: continue
+            par = (idi, 'en')
+            try:
+                if not asegurar(par, cupo_n): continue
+            except Exception as e: print('AVISO traducir modelo', par, type(e).__name__); continue
+            for k in range(0, len(L), 64):
+                if time.time() - T1 > TOPE_EN: break
+                tanda = L[k:k + 64]
+                try: U = pasar([a['t'] for a in tanda], par)
+                except Exception as e: print('AVISO traducir tanda', par, type(e).__name__, str(e)[:80]); break
+                for a, u in zip(tanda, U):
+                    u = ' '.join(html.unescape(html.unescape(u or '')).split())
+                    if u and latino(u) and not igual(u, a['t']): a['n'] = cache_n[a['t']] = u[:260]; hechos_n += 1
+                    else: cache_n[a['t']] = ''
+        print('al inglés ahora', hechos_n, '· seg', round(time.time() - T1))
     except Exception as e:
         print('AVISO traducir', type(e).__name__, str(e)[:120])
     vivos = {a['t'] for a in d['titulares']}
-    cache = {k: v for k, v in cache.items() if k in vivos}
+    cache = {k: v for k, v in cache.items() if k in vivos}; cache_n = {k: v for k, v in cache_n.items() if k in vivos}
     for a in d['titulares']:
         if not a.get('e'): a.pop('e', None)
+        if not a.get('n'): a.pop('n', None)
     json.dump(d, open(ruta, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-    json.dump({'nota': 'Traducciones automáticas ya hechas (Argos Translate), para no repetirlas.', 'v': 2, 't': cache}, open(rc, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    json.dump({'nota': 'Traducciones automáticas ya hechas (Argos Translate), para no repetirlas.', 'v': 2, 't': cache, 'n': cache_n}, open(rc, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     falta = sum(1 for a in d['titulares'] if M[a['m']]['i'] != 'es' and 'e' not in a)
-    print('traducidos ahora', hechos, '· con traducción', sum(1 for a in d['titulares'] if 'e' in a), '· pendientes', falta, '· seg', round(time.time() - T0))
+    falta_n = sum(1 for a in d['titulares'] if M[a['m']]['i'] != 'en' and 'n' not in a)
+    print('traducidos ahora', hechos, '· en inglés', sum(1 for a in d['titulares'] if 'n' in a), '· pendientes al inglés', falta_n, '· con traducción', sum(1 for a in d['titulares'] if 'e' in a), '· pendientes', falta, '· seg', round(time.time() - T0))
 
 if __name__ == '__main__':
     main()
