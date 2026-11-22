@@ -2,7 +2,7 @@
 """Titulares de medios para opnflash.com.
 
 Lee la lista aprobada por el usuario el 21/11/2026 (referencia/medios/fuentes-medios.json) y guarda
-public/datos/titulares.json. De cada noticia solo se guarda: titular, medio, hora y enlace (y el lugar que nombra, ver lugar.py).
+public/datos/titulares.json. De cada noticia solo se guarda: titular, medio, hora y enlace (y el punto en el país del medio, ver lugar.py).
 Nunca texto, fotos, vídeos ni logos. Uso:  python3 medios.py [carpeta public] [segundos máximos]
 """
 import json, os, sys, re, time, html, datetime as dt, urllib.request, urllib.parse, xml.etree.ElementTree as ET
@@ -112,7 +112,7 @@ def main():
             if k in vistos or u in vistos: continue
             vistos.add(k); vistos.add(u)
             a = {'m': m, 't': t, 'u': u, 'f': d.strftime('%Y-%m-%dT%H:%M:%SZ')}
-            h_ = medios[m].get('h'); g = lugar.ubicar(t, rs, h_[3] if h_ and len(h_) > 3 else None) or ('h' in medios[m] and lugar.por_sede(medios[m]['h'], t))
+            h_ = medios[m].get('h'); g = lugar.por_sede(h_, t) if h_ else lugar.ubicar(t, rs)   # el país del medio (usuario, 22/11); el lugar del titular solo si el medio no tiene sede
             if g: a['g'] = g
             tit.append(a); n += 1
             if n >= medios[m].get('_max', POR_MEDIO): break
