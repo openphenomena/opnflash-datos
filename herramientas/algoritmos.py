@@ -104,8 +104,8 @@ def main():
         import lugar
         ahora = max(F) if F else time.time(); ini = min(F) if F else ahora
         dias_prev = max(1.0, (ahora - 86400 - ini) / 86400)
-        hoy = collections.Counter(); antes = collections.Counter(); ej = collections.defaultdict(set)
-        for a, f in zip(T, F):
+        hoy = collections.Counter(); antes = collections.Counter(); ej = collections.defaultdict(set); ids = collections.defaultdict(list)
+        for k_, (a, f) in enumerate(zip(T, F)):
             txt = a['t'] if M[a['m']]['i'] in ('en', 'es') else (a.get('n') or a.get('e') or '')
             if not txt: continue
             try: i = lugar.buscar(txt)
@@ -114,14 +114,14 @@ def main():
             p = lugar.P[i]
             nombre = p[2]
             (hoy if f >= ahora - 86400 else antes)[nombre] += 1
-            if f >= ahora - 86400: ej[nombre].add(M[a['m']]['n'])
+            if f >= ahora - 86400: ej[nombre].add(M[a['m']]['n']); ids[nombre].append(k_)
         # Los feeds guardan pocos días, así que hay menos titulares antiguos: se compara la proporción, no la cuenta
         t24 = sum(1 for f in F if f >= ahora - 86400) or 1; tant = (len(F) - t24) or 1
         ten = []
         for nombre, n in hoy.items():
             media = antes[nombre] / dias_prev
             x = (n / t24) / max(antes[nombre] / tant, 1.5 / tant)
-            if n >= 12 and x >= 2 and len(ej[nombre]) >= 4: ten.append({'lugar': nombre, 'n24': n, 'media': round(media, 1), 'x': round(x, 1), 'medios': len(ej[nombre])})
+            if n >= 12 and x >= 2 and len(ej[nombre]) >= 4: ten.append({'lugar': nombre, 'n24': n, 'media': round(media, 1), 'x': round(x, 1), 'medios': len(ej[nombre]), 'i': ids[nombre]})
         ten.sort(key=lambda t: (-t['x'], -t['n24']))
         json.dump({'generado': d.get('generado'), 'nota': 'Lugares nombrados en los titulares de las últimas 24 horas, comparados con su media diaria en los días anteriores de la captura. Cuenta automática, sin valoración.',
                    'datos': ten[:8]}, open(os.path.join(D, 'tendencias.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
@@ -133,6 +133,8 @@ def main():
     dud = collections.Counter()
     for a in T:
         q = ''
+        # Una «traducción al español» que es igual a la inglesa no está traducida: se quita (el sitio enseña el original)
+        if a.get('e') and a.get('n') and M[a['m']]['i'] not in ('en', 'es') and nz(a['e']).strip() == nz(a['n']).strip(): a.pop('e'); dud['e_quitadas'] += 1
         o = palabras(a['t'])
         for k in ('e', 'n'):
             tr = a.get(k)
