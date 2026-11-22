@@ -186,13 +186,11 @@ def noticias_es():
     (CC BY 3.0: enlace a la nota, nombre del autor y enlace a la licencia; sin fotos ni multimedia de terceros).
     Solo se muestran título, autor, fecha y enlace. Noticias ONU queda fuera hasta fijar cómo se la informa."""
     datos = _rss('https://www.agenciasinc.es/feed/Noticias', 'SINC') + _rss('https://es.globalvoices.org/feed/', 'Global Voices')
-    datos += _rss('https://ciencia.nasa.gov/feed/', 'NASA en español') + _comision()
+    # NASA en español y Comisión Europea: retiradas por el usuario el 22/11 (6:32 p. m.)
     datos.sort(key=lambda a: a['fecha'] or '', reverse=True)
-    return {'fuente': 'SINC · Global Voices · Comisión Europea · NASA en español', 'licencia': 'Cada fuente con su licencia',
+    return {'fuente': 'SINC · Global Voices', 'licencia': 'Cada fuente con su licencia',
             'licencias': {'SINC': {'nombre': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/deed.es', 'web': 'https://www.agenciasinc.es/'},
-                          'Global Voices': {'nombre': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/deed.es', 'web': 'https://es.globalvoices.org/'},
-                          'Comisión Europea': {'nombre': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/deed.es', 'web': 'https://ec.europa.eu/commission/presscorner/home/es'},
-                          'NASA en español': {'nombre': 'Material de la NASA', 'url': 'https://www.nasa.gov/nasa-brand-center/images-and-media/', 'web': 'https://ciencia.nasa.gov/'}},
+                          'Global Voices': {'nombre': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/deed.es', 'web': 'https://es.globalvoices.org/'}},
             'enlace': 'https://www.agenciasinc.es/', 'actualizado': ahora(), 'datos': datos}
 
 def main():
@@ -206,6 +204,7 @@ def main():
         # Si una fuente de noticias falla en esta pasada (GDELT responde a menudo «429 Too Many Requests» a GitHub), se conserva lo de la anterior
         if k in ('ciencia', 'noticias', 'noticias_es') and r and not r.get('datos') and (antes.get(k) or {}).get('datos'):
             r = antes[k]; print('AVISO', k, 'sin datos en esta pasada: se conserva la anterior')
+            if k == 'noticias_es': r['datos'] = [x for x in r['datos'] if x.get('medio') in ('SINC', 'Global Voices')]
         portada[k] = r
         print(k, 'sin datos' if not r else (len(r['datos']) if isinstance(r['datos'], list) else 'ok'))
     json.dump(portada, open(os.path.join(PUB, 'datos', 'portada.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
