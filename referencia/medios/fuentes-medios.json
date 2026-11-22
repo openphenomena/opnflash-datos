@@ -18465,7 +18465,7 @@
   {
    "medio": "La Patilla",
    "feed": "La Patilla",
-   "url": "https://www.lapatilla.com/feed/",
+   "url": "https://news.google.com/rss/search?q=site%3Alapatilla.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
@@ -18585,14 +18585,15 @@
   {
    "medio": "Diario La Región",
    "feed": "Diario La Región",
-   "url": "https://diariolaregion.net/feed/",
+   "url": "https://news.google.com/rss/search?q=site%3Adiariolaregion.net%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Sumarium",
@@ -18645,14 +18646,15 @@
   {
    "medio": "El Mundo Economía y Negocios",
    "feed": "El Mundo Economía y Negocios",
-   "url": "https://news.google.com/rss/search?q=site%3Aelmundo.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "url": "https://news.google.com/rss/search?q=site%3Aelmundo.com.ve%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "economia"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Petroguía",
@@ -18681,38 +18683,41 @@
   {
    "medio": "Prodavinci",
    "feed": "Prodavinci",
-   "url": "https://news.google.com/rss/search?q=site%3Aprodavinci.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "url": "https://news.google.com/rss/search?q=site%3Aprodavinci.com%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Kapé Kapé",
    "feed": "Kapé Kapé",
-   "url": "https://news.google.com/rss/search?q=site%3Akapekape.org%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "url": "https://news.google.com/rss/search?q=site%3Akapekape.org%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Supuesto Negado",
    "feed": "Supuesto Negado",
-   "url": "https://news.google.com/rss/search?q=site%3Asupuestonegado.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "url": "https://news.google.com/rss/search?q=site%3Asupuestonegado.com%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Venevisión",
@@ -18825,50 +18830,54 @@
   {
    "medio": "Provea",
    "feed": "Provea",
-   "url": "https://news.google.com/rss/search?q=site%3Aprovea.org%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "url": "https://news.google.com/rss/search?q=site%3Aprovea.org%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Observatorio Venezolano de Conflictividad Social",
    "feed": "Observatorio Venezolano de Conflictividad Social",
-   "url": "https://www.observatoriodeconflictos.org.ve/feed",
+   "url": "https://news.google.com/rss/search?q=site%3Aobservatoriodeconflictos.org.ve%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Observatorio Venezolano de Violencia",
    "feed": "Observatorio Venezolano de Violencia",
-   "url": "https://news.google.com/rss/search?q=site%3Aobservatoriodeviolencia.org.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
+   "url": "https://news.google.com/rss/search?q=site%3Aobservatoriodeviolencia.org.ve%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Transparencia Venezuela",
    "feed": "Transparencia Venezuela",
-   "url": "https://transparenciave.org/feed/",
+   "url": "https://news.google.com/rss/search?q=site%3Atransparenciave.org%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
    ],
    "tema": [
     "venezuela"
-   ]
+   ],
+   "max": 4
   },
   {
    "medio": "Meridiano",
@@ -18885,7 +18894,7 @@
   {
    "medio": "Líder en Deportes",
    "feed": "Líder en Deportes",
-   "url": "https://liderendeportes.com/feed/",
+   "url": "https://news.google.com/rss/search?q=site%3Aliderendeportes.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
