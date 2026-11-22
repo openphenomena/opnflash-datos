@@ -1,7 +1,7 @@
 {
- "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala de control: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026).",
- "total_feeds": 1426,
- "total_medios": 1397,
+ "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala de control: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026). El 22/11/2026 (12:07) el usuario aprobó 71 fuentes más de América del Sur (18 por búsqueda de Google Noticias limitada a la web del medio, porque no tienen feed propio), con dos principales por país para el modo Simple, y quitó Vatican News English y Catholic Radio Network por ser medios religiosos (compromiso de derechos humanos del sitio).",
+ "total_feeds": 1495,
+ "total_medios": 1466,
  "feeds": [
   {
    "medio": "BBC",
@@ -9920,18 +9920,6 @@
    ]
   },
   {
-   "medio": "Catholic Radio Network",
-   "feed": "Catholic Radio Network",
-   "url": "https://catholicradionetwork.org/feed/",
-   "idioma": "en",
-   "region": [
-    "África"
-   ],
-   "tema": [
-    "africa"
-   ]
-  },
-  {
    "medio": "Channel 5 Belize",
    "feed": "Channel 5 Belize",
    "url": "https://www.greaterbelize.com/feed/",
@@ -15790,18 +15778,6 @@
    ]
   },
   {
-   "medio": "Vatican News English",
-   "feed": "Vatican News English",
-   "url": "https://www.vaticannews.va/en.rss.xml",
-   "idioma": "en",
-   "region": [
-    "Europa"
-   ],
-   "tema": [
-    "europe"
-   ]
-  },
-  {
    "medio": "Verslo žinios",
    "feed": "Verslo žinios",
    "url": "https://www.vz.lt/rss",
@@ -16183,7 +16159,8 @@
    ],
    "tema": [
     "latam"
-   ]
+   ],
+   "principal": true
   },
   {
    "medio": "Nexo Jornal",
@@ -17348,6 +17325,875 @@
     "sala"
    ],
    "max": 8
+  },
+  {
+   "medio": "Perfil",
+   "feed": "Perfil",
+   "url": "https://www.perfil.com/feed",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Ámbito",
+   "feed": "Ámbito",
+   "url": "https://www.ambito.com/rss/pages/home.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "El Cronista",
+   "feed": "El Cronista",
+   "url": "https://www.cronista.com/files/rss/news.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "TN",
+   "feed": "TN",
+   "url": "https://tn.com.ar/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "elDiarioAR",
+   "feed": "elDiarioAR",
+   "url": "https://www.eldiarioar.com/rss/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "El Destape",
+   "feed": "El Destape",
+   "url": "https://www.eldestapeweb.com/adjuntos/177/rss/home.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "La Capital (Rosario)",
+   "feed": "La Capital (Rosario)",
+   "url": "https://www.lacapital.com.ar/rss/home.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Río Negro",
+   "feed": "Río Negro",
+   "url": "https://www.rionegro.com.ar/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Los Andes",
+   "feed": "Los Andes",
+   "url": "https://news.google.com/rss/search?q=site%3Alosandes.com.ar%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "La Voz del Interior",
+   "feed": "La Voz del Interior",
+   "url": "https://news.google.com/rss/search?q=site%3Alavoz.com.ar%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Cooperativa",
+   "feed": "Cooperativa",
+   "url": "https://www.cooperativa.cl/noticias/site/tax/port/all/rss_3___1.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Emol",
+   "feed": "Emol",
+   "url": "https://news.google.com/rss/search?q=site%3Aemol.com%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "El Mostrador",
+   "feed": "El Mostrador",
+   "url": "https://news.google.com/rss/search?q=site%3Aelmostrador.cl%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "T13",
+   "feed": "T13",
+   "url": "https://news.google.com/rss/search?q=site%3At13.cl%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "24 Horas (TVN)",
+   "feed": "24 Horas (TVN)",
+   "url": "https://news.google.com/rss/search?q=site%3A24horas.cl%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Interferencia",
+   "feed": "Interferencia",
+   "url": "https://interferencia.cl/rss.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Ex-Ante",
+   "feed": "Ex-Ante",
+   "url": "https://www.ex-ante.cl/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Radio Universidad de Chile",
+   "feed": "Radio Universidad de Chile",
+   "url": "https://radio.uchile.cl/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Diario Financiero",
+   "feed": "Diario Financiero",
+   "url": "https://www.df.cl/noticias/site/list/port/rss.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Semana",
+   "feed": "Semana",
+   "url": "https://www.semana.com/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Caracol Radio",
+   "feed": "Caracol Radio",
+   "url": "https://caracol.com.co/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Blu Radio",
+   "feed": "Blu Radio",
+   "url": "https://news.google.com/rss/search?q=site%3Abluradio.com%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Noticias Caracol",
+   "feed": "Noticias Caracol",
+   "url": "https://news.google.com/rss/search?q=site%3Anoticiascaracol.com%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Cambio",
+   "feed": "Cambio",
+   "url": "https://cambiocolombia.com/feeds/articulos/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "El Colombiano",
+   "feed": "El Colombiano",
+   "url": "https://www.elcolombiano.com/rss/portada.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "El País (Cali)",
+   "feed": "El País (Cali)",
+   "url": "https://www.elpais.com.co/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "El Heraldo",
+   "feed": "El Heraldo",
+   "url": "https://www.elheraldo.co/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Razón Pública",
+   "feed": "Razón Pública",
+   "url": "https://razonpublica.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Verdad Abierta",
+   "feed": "Verdad Abierta",
+   "url": "https://verdadabierta.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Gestión",
+   "feed": "Gestión",
+   "url": "https://gestion.pe/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Correo (Perú)",
+   "feed": "Correo (Perú)",
+   "url": "https://diariocorreo.pe/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Infobae Perú",
+   "feed": "Infobae Perú",
+   "url": "https://www.infobae.com/arc/outboundfeeds/rss/category/peru/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Exitosa",
+   "feed": "Exitosa",
+   "url": "https://www.exitosanoticias.pe/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Andina",
+   "feed": "Andina",
+   "url": "https://andina.pe/agencia/rss/0.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Wayka",
+   "feed": "Wayka",
+   "url": "https://wayka.pe/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Teleamazonas",
+   "feed": "Teleamazonas",
+   "url": "https://www.teleamazonas.com/rss/home.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Ecuavisa",
+   "feed": "Ecuavisa",
+   "url": "https://news.google.com/rss/search?q=site%3Aecuavisa.com%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Extra",
+   "feed": "Extra",
+   "url": "https://www.extra.ec/rss",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Metro Ecuador",
+   "feed": "Metro Ecuador",
+   "url": "https://www.metroecuador.com.ec/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "La Hora (Ecuador)",
+   "feed": "La Hora (Ecuador)",
+   "url": "https://news.google.com/rss/search?q=site%3Alahora.com.ec%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Plan V",
+   "feed": "Plan V",
+   "url": "https://planv.com.ec/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "GK",
+   "feed": "GK",
+   "url": "https://gk.city/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Opinión (Bolivia)",
+   "feed": "Opinión (Bolivia)",
+   "url": "https://www.opinion.com.bo/rss/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "La Razón (Bolivia)",
+   "feed": "La Razón (Bolivia)",
+   "url": "https://www.la-razon.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Visión 360",
+   "feed": "Visión 360",
+   "url": "https://www.vision360.bo/rss/noticias",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Unitel",
+   "feed": "Unitel",
+   "url": "https://news.google.com/rss/search?q=site%3Aunitel.bo%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Correo del Sur",
+   "feed": "Correo del Sur",
+   "url": "https://news.google.com/rss/search?q=site%3Acorreodelsur.com%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Brújula Digital",
+   "feed": "Brújula Digital",
+   "url": "https://brujuladigital.net/rss.xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "ABI (Agencia Boliviana de Información)",
+   "feed": "ABI (Agencia Boliviana de Información)",
+   "url": "https://news.google.com/rss/search?q=site%3Aabi.bo%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "ABC Color",
+   "feed": "ABC Color",
+   "url": "https://www.abc.com.py/arc/outboundfeeds/rss/?outputType=xml",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Última Hora",
+   "feed": "Última Hora",
+   "url": "https://news.google.com/rss/search?q=site%3Aultimahora.com%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "El Nacional (Paraguay)",
+   "feed": "El Nacional (Paraguay)",
+   "url": "https://elnacional.com.py/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Montevideo Portal",
+   "feed": "Montevideo Portal",
+   "url": "https://www.montevideo.com.uy/anxml.aspx?59",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Canal 12 Uruguay",
+   "feed": "Canal 12 Uruguay",
+   "url": "https://www.teledoce.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "El Observador",
+   "feed": "El Observador",
+   "url": "https://news.google.com/rss/search?q=site%3Aelobservador.com.uy%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "Subrayado",
+   "feed": "Subrayado",
+   "url": "https://news.google.com/rss/search?q=site%3Asubrayado.com.uy%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "UOL Notícias",
+   "feed": "UOL Notícias",
+   "url": "https://rss.uol.com.br/feed/noticias.xml",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ],
+   "principal": true
+  },
+  {
+   "medio": "CNN Brasil",
+   "feed": "CNN Brasil",
+   "url": "https://www.cnnbrasil.com.br/feed/",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Metrópoles",
+   "feed": "Metrópoles",
+   "url": "https://www.metropoles.com/feed",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Poder360",
+   "feed": "Poder360",
+   "url": "https://www.poder360.com.br/feed/",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Agência Pública",
+   "feed": "Agência Pública",
+   "url": "https://apublica.org/feed/",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Intercept Brasil",
+   "feed": "Intercept Brasil",
+   "url": "https://www.intercept.com.br/feed/",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Gazeta do Povo",
+   "feed": "Gazeta do Povo",
+   "url": "https://www.gazetadopovo.com.br/feed/rss/ultimas-noticias.xml",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Brasil de Fato",
+   "feed": "Brasil de Fato",
+   "url": "https://www.brasildefato.com.br/feed",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "CartaCapital",
+   "feed": "CartaCapital",
+   "url": "https://www.cartacapital.com.br/feed/",
+   "idioma": "pt",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Guyana Chronicle",
+   "feed": "Guyana Chronicle",
+   "url": "https://guyanachronicle.com/feed/",
+   "idioma": "en",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Starnieuws",
+   "feed": "Starnieuws",
+   "url": "https://www.starnieuws.com/rss/starnieuws.rss",
+   "idioma": "nl",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "EFE",
+   "feed": "EFE",
+   "url": "https://news.google.com/rss/search?q=site%3Aefe.com%20when%3A1d&hl=es-419&gl=US&ceid=US:es-419",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "CONNECTAS",
+   "feed": "CONNECTAS",
+   "url": "https://www.connectas.org/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Mongabay Latam",
+   "feed": "Mongabay Latam",
+   "url": "https://es.mongabay.com/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
+  },
+  {
+   "medio": "Dialogue Earth (Latinoamérica)",
+   "feed": "Dialogue Earth (Latinoamérica)",
+   "url": "https://dialogue.earth/es/feed/",
+   "idioma": "es",
+   "region": [
+    "América"
+   ],
+   "tema": [
+    "latam"
+   ]
   }
  ]
 }
