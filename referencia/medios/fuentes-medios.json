@@ -6463,7 +6463,7 @@
    "medio": "Thai PBS",
    "feed": "Thai PBS",
    "url": "https://news.google.com/rss/search?q=Thai+PBS+World+news+when:2d&hl=en&gl=US&ceid=US:en",
-   "idioma": "th",
+   "idioma": "en",
    "region": [
     "Asia"
    ],
@@ -6475,7 +6475,7 @@
    "medio": "Tuoi Tre News",
    "feed": "Tuoi Tre News",
    "url": "https://news.tuoitre.vn/rss",
-   "idioma": "vi",
+   "idioma": "en",
    "region": [
     "Asia"
    ],
