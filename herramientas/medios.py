@@ -84,7 +84,7 @@ def main():
             medios.append({'n': f['medio'], 'i': f['idioma'], 'r': REG.get((f.get('region') or ['General'])[0], 'general'), 's': re.sub(r'^(www|feeds?|rss)\.', '', sitio), 'ok': 0})
         mm = medios[idx[f['medio']]]
         if f.get('principal'): mm['pr'] = 1                         # sale también en modo Simple
-        if f.get('sala'): mm['k'] = f['sala']                      # tema en la Sala de control
+        if f.get('sala'): mm['k'] = f['sala']                      # tema en la Sala Situacional
         if f.get('conflicto'): mm['cf'] = 1                         # fuente exclusiva de conflictos armados: etiqueta «Conflicto»
         if f.get('max'): mm['_max'] = max(mm.get('_max', 0), f['max'])   # titulares por captura (por defecto, POR_MEDIO)
     res, err = {}, {}
