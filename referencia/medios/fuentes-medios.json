@@ -1,7 +1,7 @@
 {
- "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala Situacional: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026). El 22/11/2026 (12:07) el usuario aprobó 71 fuentes más de América del Sur (18 por búsqueda de Google Noticias limitada a la web del medio, porque no tienen feed propio), con dos principales por país para el modo Simple, y quitó Vatican News English y Catholic Radio Network por ser medios religiosos (compromiso de derechos humanos del sitio). El 22/11/2026 (15:55) el usuario aprobó 17 feeds de fuentes exclusivas de conflictos armados (campo «conflicto»): solo sus titulares llevan la etiqueta «Conflicto» y entran en ese tema de la Sala Situacional. El 22/11/2026 (8:09 p. m.) el usuario aprobó 37 medios venezolanos más (prensa regional, economía, investigación, radio y televisión, medios cercanos al Gobierno, organizaciones con informes y deportes); 27 se leen por búsqueda de Google Noticias limitada a su web porque su feed no responde o no se actualiza. El 22/11/2026 (8:35 p. m.) se retiraron por inactivos Prodavinci, Supuesto Negado y Diario La Región (sin publicaciones nuevas desde hace más de un mes).",
- "total_feeds": 1546,
- "total_medios": 1517,
+ "nota": "Lista de feeds de titulares de medios aprobada por el usuario el 21/11/2026 21:05 (OPN · Estrategia). Uso: solo titular, medio, hora y enlace. Datos recopilados del catálogo público de worldmonitor.app; solo la lista, sin código. El 22/11/2026 el usuario aprobó 37 feeds más de medios de Venezuela (independientes, regionales y oficiales), comprobados uno a uno. El 22/11/2026 (01:19) el usuario pidió más fuentes de conflictos, geopolítica y energía nuclear para la Sala Situacional: 39 feeds más, oficiales y especializados. «sala»: tema de la Sala (c conflictos, g geopolítica, n nuclear); «max»: titulares por captura. «principal»: el medio sale también en modo Simple (el usuario lo pidió para los de Venezuela el 22/11/2026). El 22/11/2026 (12:07) el usuario aprobó 71 fuentes más de América del Sur (18 por búsqueda de Google Noticias limitada a la web del medio, porque no tienen feed propio), con dos principales por país para el modo Simple, y quitó Vatican News English y Catholic Radio Network por ser medios religiosos (compromiso de derechos humanos del sitio). El 22/11/2026 (15:55) el usuario aprobó 17 feeds de fuentes exclusivas de conflictos armados (campo «conflicto»): solo sus titulares llevan la etiqueta «Conflicto» y entran en ese tema de la Sala Situacional. El 22/11/2026 (8:09 p. m.) el usuario aprobó 37 medios venezolanos más (prensa regional, economía, investigación, radio y televisión, medios cercanos al Gobierno, organizaciones con informes y deportes); 27 se leen por búsqueda de Google Noticias limitada a su web porque su feed no responde o no se actualiza. El 22/11/2026 (8:35 p. m.) se retiraron por inactivos Prodavinci, Supuesto Negado y Diario La Región (sin publicaciones nuevas desde hace más de un mes). El 24/11/2026 el usuario pidió quitar de «General» los feeds de criptomonedas, materias primas y pódcast (85) y retirar ya los 12 medios venezolanos que no habían dado ningún titular desde el 22/11.",
+ "total_feeds": 1449,
+ "total_medios": 1421,
  "feeds": [
   {
    "medio": "BBC",
@@ -2148,83 +2148,6 @@
    ]
   },
   {
-   "medio": "Chainwire",
-   "feed": "Chainwire",
-   "url": "https://chainwire.org/feed/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto",
-    "finance"
-   ]
-  },
-  {
-   "medio": "Coinbase Blog",
-   "feed": "Coinbase Blog",
-   "url": "https://news.google.com/rss/search?q=site%3Acoinbase.com%2Fblog%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto",
-    "finance"
-   ]
-  },
-  {
-   "medio": "Binance Announcements",
-   "feed": "Binance Announcements",
-   "url": "https://news.google.com/rss/search?q=site%3Abinance.com%2Fen%2Fsupport%2Fannouncement%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto",
-    "finance"
-   ]
-  },
-  {
-   "medio": "Jin10",
-   "feed": "Jin10",
-   "url": "https://news.google.com/rss/search?q=site%3Ajin10.com%20when%3A1d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-   "idioma": "zh",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto",
-    "finance"
-   ]
-  },
-  {
-   "medio": "Oil & Gas",
-   "feed": "Oil & Gas",
-   "url": "https://news.google.com/rss/search?q=(oil%20price%20OR%20OPEC%20OR%20%22natural%20gas%22%20OR%20pipeline%20OR%20LNG)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodities",
-    "energy"
-   ]
-  },
-  {
-   "medio": "Gold & Metals",
-   "feed": "Gold & Metals",
-   "url": "https://news.google.com/rss/search?q=(%22gold%20price%22%20OR%20%22silver%20price%22%20OR%20%22precious%20metals%22%20OR%20%22copper%20price%22)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodities"
-   ]
-  },
-  {
    "medio": "White House",
    "feed": "White House",
    "url": "https://www.whitehouse.gov/briefings-statements/feed/",
@@ -4311,198 +4234,6 @@
    ]
   },
   {
-   "medio": "CoinDesk",
-   "feed": "CoinDesk",
-   "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Cointelegraph",
-   "feed": "Cointelegraph",
-   "url": "https://cointelegraph.com/rss",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "The Block",
-   "feed": "The Block",
-   "url": "https://news.google.com/rss/search?q=site:theblock.co+when:1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Decrypt",
-   "feed": "Decrypt",
-   "url": "https://decrypt.co/feed",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "The Defiant",
-   "feed": "The Defiant",
-   "url": "https://thedefiant.io/feed",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Bitcoin Magazine",
-   "feed": "Bitcoin Magazine",
-   "url": "https://bitcoinmagazine.com/feed",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "DL News",
-   "feed": "DL News",
-   "url": "https://news.google.com/rss/search?q=site:dlnews.com+when:3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "CryptoSlate",
-   "feed": "CryptoSlate",
-   "url": "https://cryptoslate.com/feed/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Unchained",
-   "feed": "Unchained",
-   "url": "https://unchainedcrypto.com/feed/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "DeFi News",
-   "feed": "DeFi News",
-   "url": "https://news.google.com/rss/search?q=(DeFi+OR+\"decentralized+finance\")+when:3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Bloomberg Crypto",
-   "feed": "Bloomberg Crypto",
-   "url": "https://news.google.com/rss/search?q=bloomberg+crypto+when:1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Reuters Crypto",
-   "feed": "Reuters Crypto",
-   "url": "https://news.google.com/rss/search?q=reuters+crypto+when:1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Wu Blockchain",
-   "feed": "Wu Blockchain",
-   "url": "https://news.google.com/rss/search?q=site:wublockchain.com+when:7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Messari",
-   "feed": "Messari",
-   "url": "https://news.google.com/rss/search?q=site:messari.io+when:3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "NFT News",
-   "feed": "NFT News",
-   "url": "https://news.google.com/rss/search?q=(NFT+OR+\"non-fungible\")+when:3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
-   "medio": "Stablecoin Policy",
-   "feed": "Stablecoin Policy",
-   "url": "https://news.google.com/rss/search?q=(stablecoin+regulation+OR+\"stablecoin+bill\")+when:7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
-   ]
-  },
-  {
    "medio": "PBoC Watch",
    "feed": "PBoC Watch",
    "url": "https://news.google.com/rss/search?q=(%22People's%20Bank%20of%20China%22%20OR%20PBoC%20OR%20PBOC)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
@@ -4743,138 +4474,6 @@
    ]
   },
   {
-   "medio": "Kitco News",
-   "feed": "Kitco News",
-   "url": "https://news.google.com/rss/search?q=site%3Akitco.com%20gold%20OR%20silver%20OR%20commodity%20OR%20metals%20when%3A1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-news"
-   ]
-  },
-  {
-   "medio": "Mining.com",
-   "feed": "Mining.com",
-   "url": "https://www.mining.com/feed/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-news"
-   ]
-  },
-  {
-   "medio": "Bloomberg Commodities",
-   "feed": "Bloomberg Commodities",
-   "url": "https://news.google.com/rss/search?q=site%3Abloomberg.com%20commodities%20OR%20metals%20OR%20mining%20when%3A1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-news"
-   ]
-  },
-  {
-   "medio": "Reuters Commodities",
-   "feed": "Reuters Commodities",
-   "url": "https://news.google.com/rss/search?q=site%3Areuters.com%20commodities%20OR%20metals%20OR%20mining%20when%3A1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-news"
-   ]
-  },
-  {
-   "medio": "S&P Global Commodity",
-   "feed": "S&P Global Commodity",
-   "url": "https://news.google.com/rss/search?q=site%3Aspglobal.com%20commodities%20metals%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-news"
-   ]
-  },
-  {
-   "medio": "CNBC Commodities",
-   "feed": "CNBC Commodities",
-   "url": "https://news.google.com/rss/search?q=site%3Acnbc.com%20(commodities%20OR%20metals%20OR%20gold%20OR%20copper)%20when%3A1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-news"
-   ]
-  },
-  {
-   "medio": "Kitco Gold",
-   "feed": "Kitco Gold",
-   "url": "https://news.google.com/rss/search?q=site%3Akitco.com%20gold%20price%20OR%20%22gold%20market%22%20OR%20%22silver%20price%22%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
-   "medio": "Gold Price News",
-   "feed": "Gold Price News",
-   "url": "https://news.google.com/rss/search?q=(gold%20price%20OR%20%22gold%20market%22%20OR%20bullion%20OR%20LBMA)%20when%3A1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
-   "medio": "Silver Price News",
-   "feed": "Silver Price News",
-   "url": "https://news.google.com/rss/search?q=(silver%20price%20OR%20%22silver%20market%22%20OR%20%22silver%20futures%22)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
-   "medio": "Precious Metals",
-   "feed": "Precious Metals",
-   "url": "https://news.google.com/rss/search?q=(%22precious%20metals%22%20OR%20platinum%20OR%20palladium%20OR%20%22gold%20ETF%22%20OR%20GLD%20OR%20SLV)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
-   "medio": "World Gold Council",
-   "feed": "World Gold Council",
-   "url": "https://news.google.com/rss/search?q=%22World%20Gold%20Council%22%20OR%20%22central%20bank%20gold%22%20OR%20%22gold%20reserves%22%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
    "medio": "OilPrice.com",
    "feed": "OilPrice.com",
    "url": "https://oilprice.com/rss/main",
@@ -4961,320 +4560,6 @@
    ]
   },
   {
-   "medio": "Mining Journal",
-   "feed": "Mining Journal",
-   "url": "https://news.google.com/rss/search?q=site%3Amining-journal.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-news"
-   ]
-  },
-  {
-   "medio": "Northern Miner",
-   "feed": "Northern Miner",
-   "url": "https://news.google.com/rss/search?q=site%3Anorthernminer.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-news"
-   ]
-  },
-  {
-   "medio": "Mining Weekly",
-   "feed": "Mining Weekly",
-   "url": "https://news.google.com/rss/search?q=site%3Aminingweekly.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-news"
-   ]
-  },
-  {
-   "medio": "Mining Technology",
-   "feed": "Mining Technology",
-   "url": "https://www.mining-technology.com/feed/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-news"
-   ]
-  },
-  {
-   "medio": "Australian Mining",
-   "feed": "Australian Mining",
-   "url": "https://www.australianmining.com.au/feed/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-news"
-   ]
-  },
-  {
-   "medio": "Mine Web (SNL)",
-   "feed": "Mine Web (SNL)",
-   "url": "https://news.google.com/rss/search?q=(%22mining%20company%22%20OR%20%22mine%20production%22%20OR%20%22mining%20operations%22)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-news"
-   ]
-  },
-  {
-   "medio": "Resource World",
-   "feed": "Resource World",
-   "url": "https://news.google.com/rss/search?q=(%22mining%20project%22%20OR%20%22mineral%20exploration%22%20OR%20%22mine%20development%22)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-news"
-   ]
-  },
-  {
-   "medio": "Benchmark Mineral",
-   "feed": "Benchmark Mineral",
-   "url": "https://news.google.com/rss/search?q=(%22critical%20minerals%22%20OR%20%22battery%20metals%22%20OR%20lithium%20OR%20cobalt%20OR%20%22rare%20earths%22)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "critical-minerals"
-   ]
-  },
-  {
-   "medio": "Lithium Market",
-   "feed": "Lithium Market",
-   "url": "https://news.google.com/rss/search?q=(lithium%20price%20OR%20%22lithium%20market%22%20OR%20%22lithium%20supply%22%20OR%20spodumene%20OR%20LCE)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "critical-minerals"
-   ]
-  },
-  {
-   "medio": "Cobalt Market",
-   "feed": "Cobalt Market",
-   "url": "https://news.google.com/rss/search?q=(cobalt%20price%20OR%20%22cobalt%20market%22%20OR%20%22DRC%20cobalt%22%20OR%20%22battery%20cobalt%22)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "critical-minerals"
-   ]
-  },
-  {
-   "medio": "Rare Earths News",
-   "feed": "Rare Earths News",
-   "url": "https://news.google.com/rss/search?q=(%22rare%20earth%22%20OR%20%22rare%20earths%22%20OR%20REE%20OR%20neodymium%20OR%20praseodymium)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "critical-minerals"
-   ]
-  },
-  {
-   "medio": "EV Battery Supply",
-   "feed": "EV Battery Supply",
-   "url": "https://news.google.com/rss/search?q=(%22EV%20battery%22%20OR%20%22battery%20supply%20chain%22%20OR%20%22battery%20materials%22)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "critical-minerals"
-   ]
-  },
-  {
-   "medio": "IEA Critical Minerals",
-   "feed": "IEA Critical Minerals",
-   "url": "https://news.google.com/rss/search?q=site%3Aiea.org%20(minerals%20OR%20critical%20OR%20battery)%20when%3A14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "critical-minerals"
-   ]
-  },
-  {
-   "medio": "Uranium Market",
-   "feed": "Uranium Market",
-   "url": "https://news.google.com/rss/search?q=(uranium%20price%20OR%20%22uranium%20market%22%20OR%20U3O8%20OR%20nuclear%20fuel)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "critical-minerals"
-   ],
-   "sala": "n",
-   "max": 8
-  },
-  {
-   "medio": "LME Metals",
-   "feed": "LME Metals",
-   "url": "https://news.google.com/rss/search?q=(LME%20OR%20%22London%20Metal%20Exchange%22)%20copper%20OR%20aluminum%20OR%20zinc%20OR%20nickel%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "base-metals"
-   ]
-  },
-  {
-   "medio": "Copper Market",
-   "feed": "Copper Market",
-   "url": "https://news.google.com/rss/search?q=(copper%20price%20OR%20%22copper%20market%22%20OR%20%22copper%20supply%22%20OR%20COMEX%20copper)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "base-metals"
-   ]
-  },
-  {
-   "medio": "Nickel News",
-   "feed": "Nickel News",
-   "url": "https://news.google.com/rss/search?q=(nickel%20price%20OR%20%22nickel%20market%22%20OR%20%22nickel%20supply%22%20OR%20Indonesia%20nickel)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "base-metals"
-   ]
-  },
-  {
-   "medio": "Aluminum & Zinc",
-   "feed": "Aluminum & Zinc",
-   "url": "https://news.google.com/rss/search?q=(aluminum%20price%20OR%20aluminium%20OR%20zinc%20price%20OR%20%22base%20metals%22)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "base-metals"
-   ]
-  },
-  {
-   "medio": "Iron Ore Market",
-   "feed": "Iron Ore Market",
-   "url": "https://news.google.com/rss/search?q=(%22iron%20ore%22%20price%20OR%20%22iron%20ore%20market%22%20OR%20%22steel%20raw%20materials%22)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "base-metals"
-   ]
-  },
-  {
-   "medio": "Metals Bulletin",
-   "feed": "Metals Bulletin",
-   "url": "https://news.google.com/rss/search?q=(%22metals%20market%22%20OR%20%22base%20metals%22%20OR%20SHFE%20OR%20%22Shanghai%20Futures%22)%20when%3A2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "base-metals"
-   ]
-  },
-  {
-   "medio": "BHP News",
-   "feed": "BHP News",
-   "url": "https://news.google.com/rss/search?q=BHP%20(mining%20OR%20production%20OR%20results%20OR%20copper%20OR%20%22iron%20ore%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-companies"
-   ]
-  },
-  {
-   "medio": "Rio Tinto News",
-   "feed": "Rio Tinto News",
-   "url": "https://news.google.com/rss/search?q=%22Rio%20Tinto%22%20(mining%20OR%20production%20OR%20results%20OR%20Pilbara)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-companies"
-   ]
-  },
-  {
-   "medio": "Glencore & Vale",
-   "feed": "Glencore & Vale",
-   "url": "https://news.google.com/rss/search?q=(Glencore%20OR%20Vale)%20(mining%20OR%20production%20OR%20cobalt%20OR%20%22iron%20ore%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-companies"
-   ]
-  },
-  {
-   "medio": "Gold Majors",
-   "feed": "Gold Majors",
-   "url": "https://news.google.com/rss/search?q=(Newmont%20OR%20Barrick%20OR%20AngloGold%20OR%20Agnico)%20(gold%20mine%20OR%20production%20OR%20results)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-companies"
-   ]
-  },
-  {
-   "medio": "Freeport & Copper Miners",
-   "feed": "Freeport & Copper Miners",
-   "url": "https://news.google.com/rss/search?q=(Freeport%20McMoRan%20OR%20Southern%20Copper%20OR%20Teck%20OR%20Antofagasta)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-companies"
-   ]
-  },
-  {
-   "medio": "Critical Mineral Companies",
-   "feed": "Critical Mineral Companies",
-   "url": "https://news.google.com/rss/search?q=(Albemarle%20OR%20SQM%20OR%20%22MP%20Materials%22%20OR%20Lynas%20OR%20Cameco)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "mining-companies"
-   ]
-  },
-  {
    "medio": "Shipping & Freight",
    "feed": "Shipping & Freight",
    "url": "https://news.google.com/rss/search?q=(%22bulk%20carrier%22%20OR%20%22dry%20bulk%22%20OR%20%22commodity%20shipping%22%20OR%20%22Port%20Hedland%22%20OR%20%22Strait%20of%20Hormuz%22)%20when%3A3d&hl=en-US&gl=US&ceid=US:en",
@@ -5323,42 +4608,6 @@
    ]
   },
   {
-   "medio": "Mining Regulation",
-   "feed": "Mining Regulation",
-   "url": "https://news.google.com/rss/search?q=(%22mining%20regulation%22%20OR%20%22mining%20policy%22%20OR%20%22mining%20permit%22%20OR%20%22mining%20ban%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-regulation"
-   ]
-  },
-  {
-   "medio": "ESG in Mining",
-   "feed": "ESG in Mining",
-   "url": "https://news.google.com/rss/search?q=(%22mining%20ESG%22%20OR%20%22responsible%20mining%22%20OR%20%22mine%20closure%22%20OR%20tailings)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-regulation"
-   ]
-  },
-  {
-   "medio": "Trade & Tariffs",
-   "feed": "Trade & Tariffs",
-   "url": "https://news.google.com/rss/search?q=(%22mineral%20tariff%22%20OR%20%22metals%20tariff%22%20OR%20%22critical%20mineral%20policy%22%20OR%20%22mining%20export%20ban%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-regulation"
-   ]
-  },
-  {
    "medio": "Trade & Tariffs",
    "feed": "Trade & Tariffs",
    "url": "https://news.google.com/rss/search?q=(tariff+OR+\"trade+war\"+OR+\"trade+deficit\"+OR+sanctions)+when:2d&hl=en-US&gl=US&ceid=US:en",
@@ -5368,30 +4617,6 @@
    ],
    "tema": [
     "economic"
-   ]
-  },
-  {
-   "medio": "Indonesia Nickel Policy",
-   "feed": "Indonesia Nickel Policy",
-   "url": "https://news.google.com/rss/search?q=(Indonesia%20nickel%20OR%20%22nickel%20export%22%20OR%20%22nickel%20ban%22%20OR%20%22nickel%20processing%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-regulation"
-   ]
-  },
-  {
-   "medio": "China Mineral Policy",
-   "feed": "China Mineral Policy",
-   "url": "https://news.google.com/rss/search?q=China%20%22rare%20earth%22%20OR%20%22mineral%20export%22%20OR%20%22critical%20mineral%22%20policy%20OR%20restriction%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodity-regulation"
    ]
   },
   {
@@ -7564,174 +6789,6 @@
    ]
   },
   {
-   "medio": "Acquired Episodes",
-   "feed": "Acquired Episodes",
-   "url": "https://news.google.com/rss/search?q=\"Acquired+podcast\"+episode+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "All-In Podcast",
-   "feed": "All-In Podcast",
-   "url": "https://news.google.com/rss/search?q=\"All-In+podcast\"+(Chamath+OR+Sacks+OR+Friedberg)+when:7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "a16z Insights",
-   "feed": "a16z Insights",
-   "url": "https://news.google.com/rss/search?q=(\"a16z\"+OR+\"Andreessen+Horowitz\")+podcast+OR+interview+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "TWIST Episodes",
-   "feed": "TWIST Episodes",
-   "url": "https://news.google.com/rss/search?q=\"This+Week+in+Startups\"+Jason+Calacanis+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "20VC Episodes",
-   "feed": "20VC Episodes",
-   "url": "https://rss.libsyn.com/shows/61840/destinations/240976.xml",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "Lex Fridman Tech",
-   "feed": "Lex Fridman Tech",
-   "url": "https://news.google.com/rss/search?q=(\"Lex+Fridman\"+interview)+(AI+OR+tech+OR+startup+OR+CEO)+when:7d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "Verge Shows",
-   "feed": "Verge Shows",
-   "url": "https://news.google.com/rss/search?q=(\"Vergecast\"+OR+\"Decoder+podcast\"+Verge)+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "Hard Fork (NYT)",
-   "feed": "Hard Fork (NYT)",
-   "url": "https://news.google.com/rss/search?q=\"Hard+Fork\"+podcast+NYT+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "Pivot Podcast",
-   "feed": "Pivot Podcast",
-   "url": "https://feeds.megaphone.fm/pivot",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "Tech Newsletters",
-   "feed": "Tech Newsletters",
-   "url": "https://news.google.com/rss/search?q=(\"Benedict+Evans\"+OR+\"Pragmatic+Engineer\"+OR+Stratechery)+tech+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "AI Podcasts",
-   "feed": "AI Podcasts",
-   "url": "https://news.google.com/rss/search?q=(\"AI+podcast\"+OR+\"artificial+intelligence+podcast\")+episode+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "AI Interviews",
-   "feed": "AI Interviews",
-   "url": "https://news.google.com/rss/search?q=(NVIDIA+OR+OpenAI+OR+Anthropic+OR+DeepMind)+interview+OR+podcast+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "How I Built This",
-   "feed": "How I Built This",
-   "url": "https://news.google.com/rss/search?q=\"How+I+Built+This\"+Guy+Raz+when:14d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
-   "medio": "Masters of Scale",
-   "feed": "Masters of Scale",
-   "url": "https://rss.art19.com/masters-of-scale",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "podcasts"
-   ]
-  },
-  {
    "medio": "Reuters Markets",
    "feed": "Reuters Markets",
    "url": "https://news.google.com/rss/search?q=site:reuters.com+markets+stocks+when:1d&hl=en-US&gl=US&ceid=US:en",
@@ -7813,42 +6870,6 @@
    ],
    "tema": [
     "bonds"
-   ]
-  },
-  {
-   "medio": "Agriculture",
-   "feed": "Agriculture",
-   "url": "https://news.google.com/rss/search?q=(wheat+OR+corn+OR+soybeans+OR+coffee+OR+sugar)+price+OR+commodity+when:3d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodities"
-   ]
-  },
-  {
-   "medio": "Commodity Trading",
-   "feed": "Commodity Trading",
-   "url": "https://news.google.com/rss/search?q=(\"commodity+trading\"+OR+\"futures+market\"+OR+CME+OR+NYMEX+OR+COMEX)+when:2d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "commodities"
-   ]
-  },
-  {
-   "medio": "Crypto News",
-   "feed": "Crypto News",
-   "url": "https://news.google.com/rss/search?q=(bitcoin+OR+ethereum+OR+crypto+OR+\"digital+assets\")+when:1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "crypto"
    ]
   },
   {
@@ -8089,54 +7110,6 @@
    ],
    "tema": [
     "inspiring"
-   ]
-  },
-  {
-   "medio": "GoldSeek",
-   "feed": "GoldSeek",
-   "url": "https://www.goldseek.com/rss.xml",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
-   "medio": "SilverSeek",
-   "feed": "SilverSeek",
-   "url": "https://www.silverseek.com/rss.xml",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
-   "medio": "Gold Silver Worlds",
-   "feed": "Gold Silver Worlds",
-   "url": "https://goldsilverworlds.com/feed/",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
-   ]
-  },
-  {
-   "medio": "FX Empire Gold",
-   "feed": "FX Empire Gold",
-   "url": "https://news.google.com/rss/search?q=site:fxempire.com+gold+when:1d&hl=en-US&gl=US&ceid=US:en",
-   "idioma": "en",
-   "region": [
-    "General"
-   ],
-   "tema": [
-    "gold-silver"
    ]
   },
   {
@@ -12456,7 +11429,7 @@
    "medio": "Moldova 1",
    "feed": "Moldova 1",
    "url": "https://news.google.com/rss/search?q=site%3Amoldova1.md+when%3A7d&hl=en&gl=US&ceid=US%3Aen",
-   "idioma": "ro",
+   "idioma": "en",
    "region": [
     "Europa"
    ],
@@ -12660,7 +11633,7 @@
    "medio": "Nasha Niva",
    "feed": "Nasha Niva",
    "url": "https://news.google.com/rss/search?q=site%3Anashaniva.com+when%3A7d&hl=en&gl=US&ceid=US%3Aen",
-   "idioma": "be",
+   "idioma": "en",
    "region": [
     "Europa"
    ],
@@ -12804,7 +11777,7 @@
    "medio": "Newsbook Malta",
    "feed": "Newsbook Malta",
    "url": "https://news.google.com/rss/search?q=site%3Anewsbook.com.mt+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
-   "idioma": "mt",
+   "idioma": "en",
    "region": [
     "Oriente Medio"
    ],
@@ -14460,7 +13433,7 @@
    "medio": "Setopati",
    "feed": "Setopati",
    "url": "https://news.google.com/rss/search?q=site%3Asetopati.com+when%3A7d&hl=ne&gl=US&ceid=US%3Ane",
-   "idioma": "ne",
+   "idioma": "en",
    "region": [
     "Asia"
    ],
@@ -15685,7 +14658,7 @@
    "medio": "Turan",
    "feed": "Turan",
    "url": "https://news.google.com/rss/search?q=site%3Aturan.az+when%3A7d&hl=en&gl=US&ceid=US%3Aen",
-   "idioma": "az",
+   "idioma": "en",
    "region": [
     "Europa"
    ],
@@ -18475,18 +17448,6 @@
    ]
   },
   {
-   "medio": "Panorama",
-   "feed": "Panorama",
-   "url": "https://news.google.com/rss/search?q=site%3Apanorama.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
    "medio": "El Siglo",
    "feed": "El Siglo",
    "url": "https://news.google.com/rss/search?q=site%3Aelsiglo.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
@@ -18523,33 +17484,9 @@
    ]
   },
   {
-   "medio": "Diario de Guayana",
-   "feed": "Diario de Guayana",
-   "url": "https://news.google.com/rss/search?q=site%3Adiariodeguayana.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
    "medio": "El Periodiquito",
    "feed": "El Periodiquito",
    "url": "https://news.google.com/rss/search?q=site%3Aelperiodiquito.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
-   "medio": "Versión Final",
-   "feed": "Versión Final",
-   "url": "https://news.google.com/rss/search?q=site%3Aversionfinal.com.ve%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
@@ -18583,30 +17520,6 @@
    ]
   },
   {
-   "medio": "Sumarium",
-   "feed": "Sumarium",
-   "url": "https://news.google.com/rss/search?q=site%3Asumarium.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
-   "medio": "Reporte Ya",
-   "feed": "Reporte Ya",
-   "url": "https://news.google.com/rss/search?q=site%3Areporteya.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
    "medio": "La Voce d'Italia",
    "feed": "La Voce d'Italia",
    "url": "https://voce.com.ve/feed/",
@@ -18629,19 +17542,6 @@
    "tema": [
     "economia"
    ]
-  },
-  {
-   "medio": "El Mundo Economía y Negocios",
-   "feed": "El Mundo Economía y Negocios",
-   "url": "https://news.google.com/rss/search?q=site%3Aelmundo.com.ve%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "economia"
-   ],
-   "max": 4
   },
   {
    "medio": "Petroguía",
@@ -18668,58 +17568,9 @@
    ]
   },
   {
-   "medio": "Kapé Kapé",
-   "feed": "Kapé Kapé",
-   "url": "https://news.google.com/rss/search?q=site%3Akapekape.org%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ],
-   "max": 4
-  },
-  {
-   "medio": "Venevisión",
-   "feed": "Venevisión",
-   "url": "https://news.google.com/rss/search?q=site%3Avenevision.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
    "medio": "Unión Radio",
    "feed": "Unión Radio",
    "url": "https://news.google.com/rss/search?q=site%3Aunionradio.net%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
-   "medio": "Radio Caracas Radio",
-   "feed": "Radio Caracas Radio",
-   "url": "https://news.google.com/rss/search?q=site%3Arcr750.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ]
-  },
-  {
-   "medio": "EVTV",
-   "feed": "EVTV",
-   "url": "https://news.google.com/rss/search?q=site%3Aevtvmiami.com%20when%3A2d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
@@ -18792,32 +17643,6 @@
    "medio": "Provea",
    "feed": "Provea",
    "url": "https://news.google.com/rss/search?q=site%3Aprovea.org%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ],
-   "max": 4
-  },
-  {
-   "medio": "Observatorio Venezolano de Conflictividad Social",
-   "feed": "Observatorio Venezolano de Conflictividad Social",
-   "url": "https://news.google.com/rss/search?q=site%3Aobservatoriodeconflictos.org.ve%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
-   "idioma": "es",
-   "region": [
-    "América"
-   ],
-   "tema": [
-    "venezuela"
-   ],
-   "max": 4
-  },
-  {
-   "medio": "Observatorio Venezolano de Violencia",
-   "feed": "Observatorio Venezolano de Violencia",
-   "url": "https://news.google.com/rss/search?q=site%3Aobservatoriodeviolencia.org.ve%20when%3A7d&hl=es-419&gl=VE&ceid=VE:es-419",
    "idioma": "es",
    "region": [
     "América"
